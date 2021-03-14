@@ -16,7 +16,7 @@ export default function DefaultLayout(props) {
   const inintData = useCallback(() => {
     dispatch(
       userAction.setUser({
-        name: "Taoqn12",
+        name: "Taoqn123",
         idAvartar: "123",
         authorities: ["System"],
       })

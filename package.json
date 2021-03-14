@@ -1,7 +1,7 @@
 {
-  "name": "front-end-rmm",
+  "name": "taoqn-react-ssr",
   "version": "1.0.0",
-  "description": "TMA",
+  "description": "IT-QNU",
   "scripts": {
     "start": "cross-env NODE_ENV=development nodemon --inspect --watch src/server --exec babel-node src/server/dev.js",
     "build": "babel-node scripts/remove.js && cross-env NODE_ENV=production babel-node scripts/prod.js",
@@ -58,7 +58,6 @@
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
     "babel-plugin-css-modules-transform": "^1.6.2",
-    "colors": "^1.4.0",
     "copy-webpack-plugin": "^8.0.0",
     "cross-env": "^7.0.3",
     "css-loader": "^5.1.2",
@@ -81,6 +80,7 @@
     "webpack-dev-middleware": "^4.1.0",
     "webpack-hot-middleware": "^2.25.0",
     "webpack-manifest-plugin": "^3.1.0",
-    "webpack-node-externals": "^2.5.2"
+    "webpack-node-externals": "^2.5.2",
+    "webpackbar": "^5.0.0-3"
   }
 }

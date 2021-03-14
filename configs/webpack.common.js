@@ -1,7 +1,7 @@
 import path from "path"
 import sass from "sass"
-import colors from "colors/safe"
-import { ProgressPlugin, EnvironmentPlugin } from "webpack"
+import webpack from "webpack"
+import WebpackBar from "webpackbar"
 import ESLintPlugin from "eslint-webpack-plugin"
 import configBabel from "../babel.config.js"
 
@@ -47,42 +47,12 @@ export default {
     },
   ],
   plugins: [
+    new WebpackBar(),
     new ESLintPlugin({}),
-    new EnvironmentPlugin({
+    new webpack.EnvironmentPlugin({
       PUBLIC_URL: process.env.PUBLIC_URL,
       APP_TITLE: process.env.APP_TITLE,
       APP_DESCRIPTION: process.env.APP_DESCRIPTION,
-    }),
-    new ProgressPlugin({
-      activeModules: false,
-      entries: true,
-      modules: true,
-      modulesCount: 5000,
-      profile: false,
-      dependencies: true,
-      dependenciesCount: 10000,
-      percentBy: null,
-      handler(percentage, message, ...args) {
-        // e.g. Output each progress message directly to the console:
-        if (percentage === 0) {
-          // eslint-disable-next-line no-console
-          console.info(colors.brightYellow("Compiling..."))
-          return
-        }
-        if (percentage < 1 && message !== "cache") {
-          // eslint-disable-next-line no-console
-          console.info(
-            colors.brightYellow(`[${Math.ceil(percentage * 100)}%]`),
-            colors.brightCyan(`${message}`),
-            ...args
-          )
-          return
-        }
-        if (percentage === 1) {
-          // eslint-disable-next-line no-console
-          console.info(colors.brightGreen("[100%] compiled successfully"))
-        }
-      },
     }),
   ],
 }

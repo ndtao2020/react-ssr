@@ -9,17 +9,15 @@ export default async (
   req,
   res,
   next,
-  { css, scripts, hostname, view, state, page, requiredLogin = "public", ...attr }
+  { scripts, hostname, view, state, page, requiredLogin = "public", ...attr }
 ) => {
   try {
     const logined = isLogin(req)
     requiredLogin === "protected" && logined && res.redirect("/")
     requiredLogin === "private" && !logined && res.redirect("/login")
     //
-    const entryCss = []
     const entryJS = []
     // add
-    css && css.forEach((e) => entryCss.push(e))
     scripts && scripts.forEach((e) => entryJS.push(e))
     // development
     if (process.env.NODE_ENV === "development") {
@@ -51,7 +49,6 @@ export default async (
         hostname={hostname || parseHost(req)}
         url={req.url}
         page={page || "home"}
-        css={entryCss}
         scripts={entryJS}
         isLogin={logined}
         state={state || (view && view.props)}

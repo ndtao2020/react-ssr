@@ -31,7 +31,9 @@ export default {
   entry: pages.reduce(
     (result, { page }) => {
       const p = path.resolve(__dirname, `../src/client/${page}`)
-      result[page] = isDev(process.env) ? ["webpack-hot-middleware/client", p] : p
+      result[page] = isDev(process.env)
+        ? [p, `webpack-hot-middleware/client?quiet=false&overlay=true`]
+        : p
       return result
     },
     {

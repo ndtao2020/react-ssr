@@ -1,5 +1,3 @@
-import colors from "colors/safe"
-
 /**
  *
  * @param {*} err
@@ -7,7 +5,7 @@ import colors from "colors/safe"
  */
 // eslint-disable-next-line no-console
 export const logErrorWebpack = (err, stats) =>
-  stats.hasErrors() && err && console.log(colors.red(err))
+  stats.hasErrors() && err && console.log(err)
 
 /**
  *

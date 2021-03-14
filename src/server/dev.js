@@ -2,7 +2,6 @@ import "../../conf"
 import path from "path"
 import express from "express"
 import helmet from "helmet"
-import colors from "colors/safe"
 import redis from "redis"
 import connectRedis from "connect-redis"
 import session from "express-session"
@@ -77,4 +76,4 @@ app.use(routers)
 // App listening
 const port = normalizePort(process.env.PORT || "3000")
 // eslint-disable-next-line no-console
-app.listen(port, () => console.log(colors.green(`App listening on port ${port} !`)))
+app.listen(port, () => console.log(`App listening on port ${port} !`))
