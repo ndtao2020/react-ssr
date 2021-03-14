@@ -1,0 +1,66 @@
+@import "../../styles/variables";
+.nav-text {
+  font-weight: 600;
+  color: black;
+}
+.input-group-button-dropdown {
+  @media only screen and (max-width: 600px) {
+    display: none;
+  }
+}
+.btn-contain {
+  padding-right: 15px !important;
+}
+.app-header {
+  @media screen and (max-width: 991px) {
+    top: 0;
+    z-index: 1020;
+  }
+  .m-nav-brand {
+    max-width: calc(80vw - 30px);
+  }
+  .head-bar {
+    @media only screen and (max-width: 600px) {
+      display: none;
+    }
+    width: 100%;
+    background-color: $primary;
+    color: $white;
+    .head-profile {
+      font-size: 0.875rem;
+      .head-avatar {
+        width: 25px;
+        height: 25px;
+        margin-right: 0.5rem;
+        background-color: $white;
+      }
+    }
+  }
+  .head-main {
+    background-color: white;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    .head-brand {
+      text-decoration: none;
+      .brand-img {
+        max-height: 50px;
+      }
+      .brand-text {
+        font-size: 0.8rem;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+    }
+    .head-search {
+      flex-grow: 1;
+      max-width: 400px;
+      @media screen and (max-width: 991px) {
+        flex-grow: 0;
+      }
+    }
+  }
+  @media only screen and (min-width: 576px) {
+    .m-user-avatar-container {
+      display: none;
+    }
+  }
+}

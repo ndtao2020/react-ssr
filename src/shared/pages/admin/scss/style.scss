@@ -1,0 +1,42 @@
+//Simplebar
+@import "~simplebar/src/simplebar.css";
+//404
+@import "404";
+//Loading
+@import "loading";
+@import "nloading";
+//
+@import "original/variables";
+@import "original/background";
+@import "original/outlinefocus";
+@import "original/typography";
+//layouts
+@import "original/layouts";
+@import "original/layouts-colors";
+//components
+@import "original/components";
+//plugins
+@import "original/plugins";
+//responsive
+@import "original/responsive";
+//404
+@import "original/pagenotfound";
+//Login
+@import "original/login";
+
+.Material-Toolbar {
+  min-height: 40px !important;
+  background-color: $main-color;
+  @media (max-width: 400px) {
+    display: grid !important;
+  }
+}
+
+.Material-Last-Page-Button {
+  color: $white-color !important;
+  background-color: $main-color !important;
+}
+.Material-Next-Page-Button {
+  color: $white-color !important;
+  background-color: $main-color !important;
+}

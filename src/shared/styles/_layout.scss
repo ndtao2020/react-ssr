@@ -1,0 +1,27 @@
+@import "./variables";
+
+/* Main */
+body {
+  margin: 0;
+  font-family: "Maven Pro", "Helvetica Neue", sans-serif;
+  position: relative;
+}
+.app-root {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
+  min-height: 100vh;
+  > *:not(.app-header):not(.app-footer):not(router-outlet) {
+    flex-grow: 1;
+  }
+}
+.app-header,
+.app-footer {
+  width: 100%;
+  display: flex;
+  flex-grow: 0;
+  flex-direction: column;
+  align-items: stretch;
+}
+/* -------------------------------------------------- Page -------------------------------------------------- */

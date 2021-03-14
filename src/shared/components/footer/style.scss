@@ -1,0 +1,79 @@
+@import "../../styles/variables";
+
+.app-footer {
+  padding-top: 16px;
+  background-color: $primary;
+  color: $white;
+
+  .hr {
+    width: 100%;
+    background-color: rgba($color: $white, $alpha: 0.1);
+    height: 1px;
+    margin: 0.5rem 0;
+  }
+
+  .copyright {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+
+    .social .fab {
+      margin: 0 0.75rem;
+    }
+  }
+
+  .nav-bottom {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    font-size: 0.8rem;
+  }
+}
+
+.col-md-3 {
+  h5 {
+    border-left: 5px solid $white;
+    padding-left: 0.75rem;
+    line-height: normal;
+    font-weight: normal;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.pay {
+  div {
+    margin-right: 8px;
+    border-radius: 2px;
+    background-color: white;
+    width: 44px;
+    height: 44px;
+    padding: 2px;
+    display: flex;
+    align-items: center;
+  }
+
+  img {
+    width: 100%;
+    margin: auto;
+  }
+}
+
+.footer-about {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+
+  p {
+    font-size: 0.8rem;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .m-hidden-view {
+    display: none;
+  }
+}

@@ -1,0 +1,24 @@
+version: '3.7'
+
+services:
+  sample:
+    container_name: front-end-rmm
+    build:
+      context: .
+      args:
+        - HTTP_PROXY=http://10.10.10.10:8080
+        - HTTPS_PROXY=http://10.10.10.10:8080
+    ports:
+      - 3000:3000
+    environment:
+      PORT: 3000
+      NODE_ENV: production
+      PUBLIC_URL: http://rmm.com
+      APP_TITLE: 12345678
+      APP_DESCRIPTION: 12345678
+      COOKIE_KEY: _sid
+      COOKIE_SECRET: 423x$%$Dfsd247!!#@
+      REDIS_HOST: localhost
+      REDIS_PORT: 6379
+      REDIS_PASSWORD: redis
+    command: npm run build && npm start
