@@ -28,9 +28,6 @@ export default async (
       const { assetsByChunkName } = jsonWebpackStats
       assetsByChunkName[page].forEach((e) => {
         const path = e.trim()
-        if (path.endsWith(".css")) {
-          entryCss.push(`/${configBuild.folderStatic}/${path}`)
-        }
         if (path.endsWith(".js")) {
           entryJS.push({
             async: false,
@@ -40,10 +37,7 @@ export default async (
       })
     } else {
       const manifest = await import("../../../build/statics/manifest.json")
-      manifest["css"][page].forEach((e) =>
-        entryCss.push(`/${configBuild.folderStatic}/${e}`)
-      )
-      manifest["js"][page].forEach((e) =>
+      manifest[page].forEach((e) =>
         entryJS.push({
           async: false,
           src: `/${configBuild.folderStatic}/${e}`,

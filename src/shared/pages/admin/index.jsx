@@ -8,7 +8,7 @@ import "../../styles/admin/style.scss"
 
 nprogress.configure({ showSpinner: false, easing: "ease", speed: 600 })
 
-const Layout = lazy(() => import("./layout/Layout"));
+const Layout = lazy(() => import("./layout/Layout"))
 
 export default function App() {
   return (

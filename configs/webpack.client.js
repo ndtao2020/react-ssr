@@ -1,7 +1,6 @@
 import path from "path"
 import webpack from "webpack"
 import TerserPlugin from "terser-webpack-plugin"
-import MiniCssExtractPlugin from "mini-css-extract-plugin"
 import { WebpackManifestPlugin } from "webpack-manifest-plugin"
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer"
 import pages from "./pages"
@@ -25,10 +24,7 @@ export default {
       },
       {
         test: regexStyles,
-        use: [
-          isDev(process.env) ? "style-loader" : MiniCssExtractPlugin.loader,
-          ...styleLoaders,
-        ],
+        use: ["style-loader", ...styleLoaders],
       },
     ],
   },
@@ -78,10 +74,6 @@ export default {
       openAnalyzer: false,
       analyzerMode: isDev(process.env) ? undefined : "static",
     }),
-    new MiniCssExtractPlugin({
-      filename: isDev(process.env) ? "[name].css" : "[name].[contenthash].css",
-      chunkFilename: isDev(process.env) ? "[id].css" : "[id].[chunkhash].css",
-    }),
     new WebpackManifestPlugin({
       fileName: "manifest.json",
       publicPath: `/${configBuild.folderStatic}/`,
@@ -89,25 +81,18 @@ export default {
         ? undefined
         : (seed, files, entrypoints) => {
             // Kiểm tra các endpoint
-            let entrypointsCSS = {},
-              entrypointsJS = {}
+            let entrypointsJS = {}
             // loops
             for (var key in entrypoints) {
-              let css = [],
-                js = []
+              const js = []
               entrypoints[key].forEach((entry) => {
-                if (getFileExtension(entry) === "css") {
-                  css.push(entry)
-                }
                 if (getFileExtension(entry) === "js") {
                   js.push(entry)
                 }
               })
-              entrypointsCSS[key] = [...css]
               entrypointsJS[key] = [...js]
             }
-            // return entrypoints;
-            return { css: { ...entrypointsCSS }, js: { ...entrypointsJS } }
+            return entrypointsJS
           },
     }),
   ],
