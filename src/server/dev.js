@@ -18,10 +18,11 @@ import webpack from "webpack"
 import webpackDevMiddleware from "webpack-dev-middleware"
 import webpackHotMiddleware from "webpack-hot-middleware"
 import clientConfig from "../../configs/webpack.client"
-//
+// compile
 const compiler = webpack(clientConfig)
 app.use(
   webpackDevMiddleware(compiler, {
+    stats: "errors-warnings",
     serverSideRender: true,
     publicPath: clientConfig.output.publicPath,
   })
