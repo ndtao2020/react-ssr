@@ -1,7 +1,9 @@
+import constant from "../constant"
+
 export default {
   setMenu: (obj) => {
     return {
-      type: "SET_MENU",
+      type: constant.MENU.setMenu,
       payload: obj,
     }
   },

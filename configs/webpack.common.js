@@ -4,14 +4,16 @@ import webpack from "webpack"
 import WebpackBar from "webpackbar"
 import ESLintPlugin from "eslint-webpack-plugin"
 import configBabel from "../babel.config.js"
+import { isDev } from "../utils/EnvUtils"
 
 export const regexScripts = /\.(js|jsx)$/
 export const regexStyles = /\.(sa|sc|c)ss$/
 export const styleLoaders = [
-  { loader: "css-loader", options: { sourceMap: false } },
+  { loader: "css-loader", options: { sourceMap: isDev(process.env) } },
+  { loader: "postcss-loader", options: { sourceMap: isDev(process.env) } },
   {
     loader: "sass-loader",
-    options: { implementation: sass, sourceMap: false },
+    options: { implementation: sass, sourceMap: isDev(process.env) },
   },
 ]
 
@@ -35,13 +37,10 @@ export default {
       },
     },
     {
-      test: /\.(png|jpg|gif)$/i,
+      test: /\.(png|jpe?g|gif|woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
       use: [
         {
-          loader: "url-loader",
-          options: {
-            limit: 8192,
-          },
+          loader: "file-loader",
         },
       ],
     },

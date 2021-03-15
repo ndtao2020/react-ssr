@@ -21,7 +21,6 @@ import clientConfig from "../../configs/webpack.client"
 const compiler = webpack(clientConfig)
 app.use(
   webpackDevMiddleware(compiler, {
-    stats: "errors-warnings",
     serverSideRender: true,
     publicPath: clientConfig.output.publicPath,
   })

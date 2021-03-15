@@ -1,6 +1,7 @@
 import path from "path"
 import webpack from "webpack"
 import TerserPlugin from "terser-webpack-plugin"
+import CssMinimizerPlugin from "css-minimizer-webpack-plugin"
 import { WebpackManifestPlugin } from "webpack-manifest-plugin"
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer"
 import pages from "./pages"
@@ -14,6 +15,7 @@ export default {
   mode: process.env.NODE_ENV,
   target: "web",
   resolve: common.resolve,
+  stats: isDev(process.env) ? "errors-warnings" : undefined,
   module: {
     rules: [
       ...common.rules,
@@ -42,22 +44,22 @@ export default {
     }
   ),
   optimization: isDev(process.env)
-    ? {}
+    ? undefined
     : {
+        minimize: true,
         splitChunks: { chunks: "all" },
-        runtimeChunk: { name: ({ name }) => `r~${name}` },
-        minimizer: isDev(process.env)
-          ? []
-          : [
-              new TerserPlugin({
-                terserOptions: {
-                  output: {
-                    comments: false,
-                  },
-                  compress: true,
-                },
-              }),
-            ],
+        runtimeChunk: { name: ({ name }) => `r.${name}` },
+        minimizer: [
+          new TerserPlugin({
+            terserOptions: {
+              output: {
+                comments: false,
+              },
+              compress: true,
+            },
+          }),
+          new CssMinimizerPlugin(),
+        ],
       },
   output: {
     publicPath: `/${configBuild.folderStatic}/`,
