@@ -9,8 +9,19 @@ import { isDev } from "../utils/EnvUtils"
 export const regexScripts = /\.(js|jsx)$/
 export const regexStyles = /\.(sa|sc|c)ss$/
 export const styleLoaders = [
-  { loader: "css-loader", options: { sourceMap: isDev(process.env) } },
-  { loader: "postcss-loader", options: { sourceMap: isDev(process.env) } },
+  {
+    loader: "css-loader",
+    options: { importLoaders: 1, sourceMap: isDev(process.env) },
+  },
+  {
+    loader: "postcss-loader",
+    options: {
+      sourceMap: isDev(process.env),
+      postcssOptions: {
+        config: path.resolve(__dirname, "../postcss.config.js"),
+      },
+    },
+  },
   {
     loader: "sass-loader",
     options: { implementation: sass, sourceMap: isDev(process.env) },
