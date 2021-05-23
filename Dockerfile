@@ -1,5 +1,21 @@
 # pull official base image
-FROM node:14.16.0-alpine
+FROM node:alpine
+
+ARG COOKIEKEY
+ARG COOKIESECRET
+
+ENV COOKIE_KEY=${COOKIEKEY}
+ENV COOKIE_SECRET=${COOKIESECRET}
+
+ARG REDISHOST
+ARG REDISPORT
+ARG REDISPASSWORD
+ARG REDIS_URL
+
+ENV REDIS_HOST=${REDISHOST}
+ENV REDIS_PORT=${REDISPORT}
+ENV REDIS_PASSWORD=${REDISPASSWORD}
+ENV REDIS_URL=${REDIS_URL}
 
 # set working directory
 WORKDIR /app
@@ -8,4 +24,9 @@ WORKDIR /app
 COPY . ./
 
 # install app dependencies
-RUN npm install --silent
+RUN npm install
+
+# run build
+RUN npm run build
+
+CMD [ "node", "index" ]

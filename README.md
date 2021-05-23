@@ -45,6 +45,7 @@ COOKIE_SECRET=1#1@!545dfvxza@
 REDIS_HOST=localhost
 REDIS_PORT=6379
 REDIS_PASSWORD=secret
+REDIS_URL=redis://default:1234@example.app:7339
 ```
 
 ## Steps for read-only access

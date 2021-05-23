@@ -34,7 +34,5 @@ services:
     image: redis:alpine
     restart: always
     command: redis-server --appendonly yes --requirepass redis
-    ports:
-      - "6379:6379"
     networks:
       - app-tier
