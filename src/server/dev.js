@@ -38,6 +38,7 @@ app.use(
     store: new Store({
       prefix: "gxcvcvdfere",
       client: redis.createClient({
+        url: process.env.REDIS_URL,
         host: process.env.REDIS_HOST || "localhost",
         port: normalizePort(process.env.REDIS_PORT || "6379"),
         password: process.env.REDIS_PASSWORD || "redis",

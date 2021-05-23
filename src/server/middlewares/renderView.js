@@ -23,8 +23,7 @@ export default async (
     // development
     if (process.env.NODE_ENV === "development") {
       const { devMiddleware } = res.locals.webpack
-      const jsonWebpackStats = devMiddleware.stats.toJson()
-      const { assetsByChunkName } = jsonWebpackStats
+      const { assetsByChunkName } = devMiddleware.stats.toJson()
       assetsByChunkName[page].forEach((e) => {
         const path = e.trim()
         if (path.endsWith(".js")) {
