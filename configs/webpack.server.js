@@ -12,6 +12,7 @@ export default {
   node: { __dirname: false },
   resolve: common.resolve,
   externals: isDev(process.env) ? [nodeExternals()] : undefined,
+  externalsPresets: { node: true },
   module: {
     rules: [
       ...common.rules,
@@ -28,7 +29,7 @@ export default {
     ),
   },
   output: {
-    filename: "server.js",
+    filename: "index.js",
     path: path.resolve(__dirname, `../${configBuild.folderBuild}`),
   },
   plugins: [

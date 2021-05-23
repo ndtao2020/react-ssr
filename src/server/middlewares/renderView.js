@@ -16,7 +16,8 @@ export default async (
     requiredLogin === "protected" && logined && res.redirect("/")
     requiredLogin === "private" && !logined && res.redirect("/login")
     //
-    const entryJS = []
+    const entryCss = [],
+      entryJS = []
     // add
     scripts && scripts.forEach((e) => entryJS.push(e))
     // development
@@ -35,7 +36,10 @@ export default async (
       })
     } else {
       const manifest = await import("../../../build/statics/manifest.json")
-      manifest[page].forEach((e) =>
+      manifest["css"][page].forEach((e) =>
+        entryCss.push(`/${configBuild.folderStatic}/${e}`)
+      )
+      manifest["js"][page].forEach((e) =>
         entryJS.push({
           async: false,
           src: `/${configBuild.folderStatic}/${e}`,
@@ -49,6 +53,7 @@ export default async (
         hostname={hostname || parseHost(req)}
         url={req.url}
         page={page || "home"}
+        css={entryCss}
         scripts={entryJS}
         isLogin={logined}
         state={state || (view && view.props)}
