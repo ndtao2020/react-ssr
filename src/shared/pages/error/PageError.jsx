@@ -17,7 +17,7 @@ export default function PageError({ children }) {
                 <img
                   src={`/${configBuild.folderAssets}/l.svg`}
                   height={150}
-                  alt={process.env.APP_TITLE}
+                  alt={""}
                 ></img>
               </a>
               <form>{children}</form>

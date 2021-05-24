@@ -46,7 +46,7 @@ app.use(
     }),
     resave: true,
     saveUninitialized: false,
-    key: process.env.COOKIE_KEY || "_sid",
+    key: "_sid",
     secret: process.env.COOKIE_SECRET || "123",
     cookie: { maxAge: 1000 * 60 * 60 * 24 },
   })

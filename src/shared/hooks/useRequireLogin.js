@@ -21,7 +21,7 @@ export default function useRequireLogin() {
           <div className="d-inline-flex m-auto align-items-center">
             <img src={`/${configBuild.folderAssets}/l.svg`} width={48} height={48} />
             <h4 className="m-0" style={{ color: "#00918C" }}>
-              {process.env.APP_TITLE}
+              Home Page
             </h4>
           </div>
         </div>

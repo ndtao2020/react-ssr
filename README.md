@@ -30,15 +30,9 @@ Comments may be added to your file as such:
 ```shell
 # This is a comment
 # Config
-PUBLIC_URL=https://abc.com
 PORT=3000
 
-# App
-APP_TITLE=Example_test
-APP_DESCRIPTION=Viet Nam Web
-
 # Session
-COOKIE_KEY=_sid
 COOKIE_SECRET=1#1@!545dfvxza@
 
 # Redis

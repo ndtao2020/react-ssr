@@ -1,11 +1,11 @@
-# pull official base image
-FROM node:alpine
+FROM node:alpine as base
 
-ARG COOKIEKEY
-ARG COOKIESECRET
+WORKDIR /app
 
-ENV COOKIE_KEY=${COOKIEKEY}
-ENV COOKIE_SECRET=${COOKIESECRET}
+FROM base as dev
+CMD [ "npm", "start" ]
+
+FROM base as prod
 
 ARG REDISHOST
 ARG REDISPORT
@@ -17,9 +17,6 @@ ENV REDIS_PORT=${REDISPORT}
 ENV REDIS_PASSWORD=${REDISPASSWORD}
 ENV REDIS_URL=${REDIS_URL}
 
-# set working directory
-WORKDIR /app
-
 # add app
 COPY . ./
 
@@ -29,4 +26,4 @@ RUN npm install
 # run build
 RUN npm run build
 
-CMD [ "node", "index" ]
+CMD [ "node", "build" ]

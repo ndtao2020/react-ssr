@@ -30,17 +30,17 @@ export default function HTML({
           name="google-site-verification"
           content="xiMe8anTjJm9_X1C2X-DqdjN7zXptepvd9lILEC130M"
         />
-        <title>{title || process.env.APP_TITLE}</title>
+        <title>{title || "Home Page"}</title>
         <meta
           name="description"
           content={description || process.env.APP_DESCRIPTION}
         />
         <meta name="keywords" content={keywords.join(",")} />
-        <meta property="og:site_name" content={process.env.APP_TITLE} />
+        <meta property="og:site_name" content={title || "Home Page"} />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="vi_VN" />
         <meta property="og:url" content={`${hostname}${url}`} />
-        <meta property="og:title" content={title || process.env.APP_TITLE} />
+        <meta property="og:title" content={title || "Home Page"} />
         <meta
           property="og:description"
           content={description || process.env.APP_DESCRIPTION}
@@ -91,7 +91,7 @@ export default function HTML({
 }
 
 HTML.defaultProps = {
-  hostname: process.env.PUBLIC_URL,
+  hostname: "",
   keywords: ["Container"],
   css: [],
   scripts: [],

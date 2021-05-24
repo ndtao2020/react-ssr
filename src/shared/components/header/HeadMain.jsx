@@ -17,9 +17,7 @@ export default function HeadMain() {
                 className="brand-img"
                 src={`/${configBuild.folderAssets}/l.svg`}
               />
-              <span className="brand-text d-none d-md-inline">
-                {process.env.APP_TITLE}
-              </span>
+              <span className="brand-text d-none d-md-inline">Home Page</span>
             </a>
           </Col>
           <Col xs={12} sm={10} md={"auto"} lg={"auto"}>

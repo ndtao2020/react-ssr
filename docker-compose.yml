@@ -1,40 +1,14 @@
 version: '3.9'
 
-networks:
-  app-tier:
-    driver: bridge
-
 services:
   web:
     build:
       context: .
-      args:
-        - PORT=3000
-        - HTTP_PROXY=http://10.10.10.10:8080
-        - HTTPS_PROXY=http://10.10.10.10:8080
-        - COOKIEKEY=_sid
-        - COOKIESECRET=1223zqwewvxci23324
-        - REDISHOST=localhost
-        - REDISPORT=6379
-        - REDISPASSWORD=redis
-        - REDIS_URL=
     ports:
-      - '3000:3000'
+      - 3000:3000
     restart: always
     environment:
       NODE_ENV: production
-      PUBLIC_URL: http://rmm.com
-      APP_TITLE: 12345678
-      APP_DESCRIPTION: 12345678
-    networks:
-      - app-tier
-    links:
-      - redis:redis
-  redis:
-    image: redis:alpine
-    restart: always
-    command: redis-server --appendonly yes --requirepass redis
-    ports:
-      - "6379:6379"
-    networks:
-      - app-tier
+      PORT: 3000
+      COOKIEKEY: _sid
+      COOKIESECRET: "1664xczxrgwy24&124"

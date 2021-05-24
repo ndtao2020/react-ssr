@@ -1,6 +1,5 @@
 import path from "path"
 import sass from "sass"
-import webpack from "webpack"
 import WebpackBar from "webpackbar"
 import ESLintPlugin from "eslint-webpack-plugin"
 import configBabel from "../babel.config.js"
@@ -56,13 +55,5 @@ export default {
       ],
     },
   ],
-  plugins: [
-    new WebpackBar(),
-    new ESLintPlugin({}),
-    new webpack.EnvironmentPlugin({
-      PUBLIC_URL: process.env.PUBLIC_URL,
-      APP_TITLE: process.env.APP_TITLE,
-      APP_DESCRIPTION: process.env.APP_DESCRIPTION,
-    }),
-  ],
+  plugins: [new WebpackBar(), new ESLintPlugin({})],
 }
