@@ -10,5 +10,3 @@ services:
     environment:
       NODE_ENV: production
       PORT: 3000
-      COOKIEKEY: _sid
-      COOKIESECRET: "1664xczxrgwy24&124"
