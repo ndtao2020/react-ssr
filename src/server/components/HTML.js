@@ -57,14 +57,6 @@ export default function HTML({
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Maven+Pro:ital,wght@0,400..900&amp;display=swap"
         />
-        <link
-          rel="stylesheet"
-          href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
-        />
-        <link
-          rel="stylesheet"
-          href="https://unpkg.com/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-        />
         {css.map((href) => (
           <link key={href} rel="stylesheet" href={href} />
         ))}

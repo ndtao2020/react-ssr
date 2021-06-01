@@ -2,7 +2,8 @@ import path from "path"
 import sass from "sass"
 import WebpackBar from "webpackbar"
 import ESLintPlugin from "eslint-webpack-plugin"
-import configBabel from "../babel.config.js"
+import balbelConfig from "../babel.config.js"
+import postcssOptions from "../postcss.config.js"
 import { isDev } from "../utils/EnvUtils"
 
 export const regexScripts = /\.(js|jsx)$/
@@ -16,9 +17,7 @@ export const styleLoaders = [
     loader: "postcss-loader",
     options: {
       sourceMap: isDev(process.env),
-      postcssOptions: {
-        config: path.resolve(__dirname, "../postcss.config.js"),
-      },
+      postcssOptions: { postcssOptions },
     },
   },
   {
@@ -43,7 +42,7 @@ export default {
       exclude: /node_modules/,
       use: {
         loader: "babel-loader",
-        options: configBabel,
+        options: balbelConfig,
       },
     },
     {
