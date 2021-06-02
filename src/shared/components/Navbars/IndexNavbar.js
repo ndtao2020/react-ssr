@@ -1,7 +1,7 @@
 /*eslint-disable*/
 import React from "react";
 
-import IndexDropdown from "../Dropdowns/IndexDropdown.js";
+import IndexDropdown from "../Dropdowns/IndexDropdown";
 
 export default function Navbar(props) {
   const [navbarOpen, setNavbarOpen] = React.useState(false);

@@ -1,8 +1,8 @@
 /*eslint-disable*/
 import React from "react";
 
-import IndexNavbar from "@/shared/components/Navbars/IndexNavbar.js";
-import Footer from "@/shared/components/Footers/Footer.js";
+import IndexNavbar from "@/shared/components/Navbars/IndexNavbar";
+import Footer from "@/shared/components/Footers/Footer";
 import "@/shared/styles/admin/style.scss"
 
 export default function Index() {
