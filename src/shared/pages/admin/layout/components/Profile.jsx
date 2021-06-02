@@ -13,7 +13,7 @@ export default function LogoHeader() {
         {idAvartar && <img src={idAvartar} alt="123" />}
       </div>
       <div className="info">
-        <div href="#col" onClick={() => setIsOpen(!isOpen)}>
+        <div href="/col" onClick={() => setIsOpen(!isOpen)}>
           <span>
             {name || ""}
             <span className="user-level">

@@ -5,6 +5,7 @@ import pages from "../../../configs/pages"
 import configBuild from "../../../configs/build"
 // midderware
 import html from "../middlewares/html"
+import { noCache } from "../middlewares/cache"
 import csrfProtection from "../middlewares/csrf"
 import renderView from "../middlewares/renderView"
 // Routes
@@ -14,29 +15,26 @@ import error from "./error"
 const router = express.Router()
 // API
 router.use(csrfProtection, api)
-router.get("/robots.txt", (req, res) => {
-  res.type("text/plain")
-  res.send(`User-agent: *\nDisallow: /profile/*`)
-})
 // PAGES
 pages.forEach(({ url, page, title, view, css, scripts }) =>
-  router.get(url, csrfProtection, html, async (req, res, next) => {
+  router.get(url, csrfProtection, noCache, html, async (req, res, next) => {
     const entryCss = [],
       entryJS = []
     // css, js
     css && css.forEach((e) => entryCss.push(e))
     scripts && scripts.forEach((e) => entryJS.push(e))
     // devMiddleware
-    const manifest = await import("../../../build/statics/manifest.json")
-    manifest["css"][page].forEach((e) =>
-      entryCss.push(`/${configBuild.folderStatic}/${e}`)
-    )
-    manifest["js"][page].forEach((e) =>
-      entryJS.push({
-        async: false,
-        src: `/${configBuild.folderStatic}/${e}`,
-      })
-    )
+    const { devMiddleware } = res.locals.webpack
+    const { assetsByChunkName } = devMiddleware.stats.toJson()
+    assetsByChunkName[page].forEach((e) => {
+      const path = e.trim()
+      if (path.endsWith(".js")) {
+        entryJS.push({
+          async: false,
+          src: `/${configBuild.folderStatic}/${path}`,
+        })
+      }
+    })
     renderView(req, res, next, {
       css: entryCss,
       scripts: entryJS,

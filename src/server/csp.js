@@ -36,11 +36,6 @@ export default {
       "https://www.facebook.com",
     ],
     mediaSrc: ["'self'"],
-    imgSrc: [
-      "'self'",
-      "data:",
-      "https://www.kodamakoifarm.com",
-      "https://www.google-analytics.com",
-    ],
+    imgSrc: ["*", "data:"],
   },
 }

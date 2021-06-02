@@ -1,15 +1,9 @@
-import "../../conf"
 import path from "path"
 import express from "express"
-import helmet from "helmet"
-import redis from "redis"
-import connectRedis from "connect-redis"
-import session from "express-session"
 import { normalizePort } from "../../utils/Server"
 import app from "./app"
-import routers from "./routers"
+import routers from "./routes/dev"
 // middlewares
-import csp from "./csp"
 import configBuild from "../../configs/build"
 import { noCache } from "./middlewares/cache"
 // webpack
@@ -26,31 +20,7 @@ app.use(
   })
 )
 app.use(webpackHotMiddleware(compiler))
-// Helmet
-app.use(helmet())
-csp.directives.scriptSrc.push("'unsafe-eval'")
-app.use(helmet.contentSecurityPolicy(csp))
-app.use(helmet.referrerPolicy({ policy: "no-referrer-when-downgrade" }))
-// Create a session middleware with the given options
-const Store = connectRedis(session)
-app.use(
-  session({
-    store: new Store({
-      prefix: "gxcvcvdfere",
-      client: redis.createClient({
-        url: process.env.REDIS_URL,
-        host: process.env.REDIS_HOST || "localhost",
-        port: normalizePort(process.env.REDIS_PORT || "6379"),
-        password: process.env.REDIS_PASSWORD || "redis",
-      }),
-    }),
-    resave: true,
-    saveUninitialized: false,
-    key: "_sid",
-    secret: process.env.COOKIE_SECRET || "123",
-    cookie: { maxAge: 1000 * 60 * 60 * 24 },
-  })
-)
+// routes static
 app.use(
   `/${configBuild.folderAssets}`,
   noCache,

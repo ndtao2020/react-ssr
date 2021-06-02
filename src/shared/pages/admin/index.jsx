@@ -1,14 +1,14 @@
 import React, { lazy } from "react"
-import { Provider } from "react-redux"
 import nprogress from "nprogress"
+import { Provider } from "react-redux"
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 import store from "./redux/store"
 import RenderSuspense from "@/shared/components/RenderSuspense"
-import "../../styles/admin/style.scss"
+import "@/shared/styles/admin/style.scss"
 
 nprogress.configure({ showSpinner: false, easing: "ease", speed: 600 })
 
-const Layout = lazy(() => import("./layout/Layout"))
+const Layout = lazy(() => import("./layout"))
 
 export default function App() {
   return (

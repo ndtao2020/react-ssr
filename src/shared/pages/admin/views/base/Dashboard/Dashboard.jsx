@@ -514,7 +514,7 @@ export default function Dashboard() {
                         className="nav-link"
                         id="pills-today"
                         data-toggle="pill"
-                        href="#pills-today"
+                        href="/pills-today"
                         role="tab"
                         aria-selected="true"
                       >
@@ -526,7 +526,7 @@ export default function Dashboard() {
                         className="nav-link active"
                         id="pills-week"
                         data-toggle="pill"
-                        href="#pills-week"
+                        href="/pills-week"
                         role="tab"
                         aria-selected="false"
                       >
@@ -538,7 +538,7 @@ export default function Dashboard() {
                         className="nav-link"
                         id="pills-month"
                         data-toggle="pill"
-                        href="#pills-month"
+                        href="/pills-month"
                         role="tab"
                         aria-selected="false"
                       >

@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import configBuild from "@configs/build"
+import image from "@/shared/assets/img/vue.jpg"
 import "./style.scss"
 
 export default function PageError({ children }) {
@@ -14,11 +14,7 @@ export default function PageError({ children }) {
           <div className="auth-form-wrap pt-xl-0 pt-70">
             <div className="auth-form w-xl-30 w-lg-65 w-sm-85 w-100 card pa-25 shadow-lg">
               <a className="auth-brand text-center d-block mb-45" href="/">
-                <img
-                  src={`/${configBuild.folderAssets}/l.svg`}
-                  height={150}
-                  alt={""}
-                ></img>
+                <img src={image} height={150} alt={""}></img>
               </a>
               <form>{children}</form>
             </div>

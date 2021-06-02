@@ -31,9 +31,6 @@ export default {
     extensions: [".js", ".jsx"],
     alias: {
       "@": path.resolve("src/"),
-      "@build": path.resolve("build/"),
-      "@configs": path.resolve("configs/"),
-      "@utils": path.resolve("utils/"),
     },
   },
   rules: [

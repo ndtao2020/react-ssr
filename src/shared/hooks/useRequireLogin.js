@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from "react"
 import { Button } from "react-bootstrap"
-import configBuild from "@configs/build"
+import configBuild from "@/configs/build"
 import Modal from "@/shared/components/modal"
 import "./styles.scss"
 

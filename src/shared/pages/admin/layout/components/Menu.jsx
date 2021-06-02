@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { useSelector } from "react-redux"
 import { Link } from "react-router-dom"
-import { generateTree } from "@utils/Tree"
+import { generateTree } from "../../../../../../utils/Tree"
 import { menuSelector } from "../../redux/selector"
 import { checkLinkURL } from "../../routes/permission"
 
