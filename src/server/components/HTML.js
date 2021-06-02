@@ -53,10 +53,6 @@ export default function HTML({
         <meta name="_csrc9eebe" content={csrf} />
         <link rel="canonical" href={`${hostname}${url}`} />
         <link rel="shortcut icon" href={`/${configBuild.folderAssets}/f.ico`} />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Maven+Pro:ital,wght@0,400..900&amp;display=swap"
-        />
         {css.map((href) => (
           <link key={href} rel="stylesheet" href={href} />
         ))}
