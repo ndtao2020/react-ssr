@@ -14,6 +14,9 @@ export default {
   resolve: common.resolve,
   externals: isDev(process.env) ? [nodeExternals()] : undefined,
   externalsPresets: { node: true },
+  experiments: {
+    lazyCompilation: true,
+  },
   module: {
     rules: [
       ...common.rules,

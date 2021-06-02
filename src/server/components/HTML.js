@@ -61,9 +61,7 @@ export default function HTML({
         <div id="root">{children}</div>
         <script
           dangerouslySetInnerHTML={{
-            __html: `window.__HEADER__=${JSON.stringify({
-              isLogin,
-            })};window.__DATA__=${JSON.stringify(state)};`,
+            __html: `window.__DATA__=${JSON.stringify({ ...state, isLogin })};`,
           }}
         />
         {scripts.map(({ async, src }) =>

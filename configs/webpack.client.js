@@ -16,6 +16,9 @@ export default {
   mode: process.env.NODE_ENV,
   target: "web",
   resolve: common.resolve,
+  experiments: {
+    lazyCompilation: true,
+  },
   stats: isDev(process.env) ? "errors-warnings" : undefined,
   module: {
     rules: [
@@ -37,9 +40,7 @@ export default {
   entry: pages.reduce(
     (result, { page }) => {
       const p = path.resolve(__dirname, `../src/client/${page}`)
-      result[page] = isDev(process.env)
-        ? [p, `webpack-hot-middleware/client?quiet=false&overlay=true`]
-        : p
+      result[page] = isDev(process.env) ? [p, `webpack-hot-middleware/client`] : p
       return result
     },
     {
@@ -92,7 +93,6 @@ export default {
       generate: isDev(process.env)
         ? undefined
         : (seed, files, entrypoints) => {
-            // Kiểm tra các endpoint
             let entrypointsCSS = {},
               entrypointsJS = {}
             // loops

@@ -16,6 +16,7 @@ app.use(cookieParser())
 app.use(helmet())
 if (process.env.NODE_ENV === "development") {
   csp.directives.scriptSrc.push("'unsafe-eval'")
+  csp.directives.connectSrc.push("http://localhost:*")
 }
 app.use(helmet.contentSecurityPolicy(csp))
 app.use(helmet.referrerPolicy({ policy: "no-referrer-when-downgrade" }))
