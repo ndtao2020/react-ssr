@@ -23,6 +23,9 @@ COPY . ./
 # install app dependencies
 RUN npm install
 
+# fix severity vulnerabilities
+RUN npm audit fix
+
 # run build
 RUN npm run build
 
