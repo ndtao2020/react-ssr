@@ -1,10 +1,11 @@
 import path from "path"
+import sass from "sass"
 import nodeExternals from "webpack-node-externals"
 import NodemonPlugin from "nodemon-webpack-plugin"
 import CopyPlugin from "copy-webpack-plugin"
 import configBuild from "./build"
 import { isDev } from "../utils/EnvUtils"
-import common, { regexStyles, styleLoaders } from "./webpack.common.js"
+import common, { regexStyles } from "./webpack.common.js"
 
 export default {
   name: "server",
@@ -14,15 +15,21 @@ export default {
   resolve: common.resolve,
   externals: isDev(process.env) ? [nodeExternals()] : undefined,
   externalsPresets: { node: true },
-  experiments: {
-    lazyCompilation: true,
-  },
   module: {
     rules: [
       ...common.rules,
       {
         test: regexStyles,
-        use: styleLoaders,
+        use: [
+          {
+            loader: "css-loader",
+            options: { importLoaders: 1, sourceMap: isDev(process.env) },
+          },
+          {
+            loader: "sass-loader",
+            options: { implementation: sass, sourceMap: isDev(process.env) },
+          },
+        ],
       },
     ],
   },

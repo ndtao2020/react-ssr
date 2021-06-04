@@ -1,5 +1,7 @@
 import path from "path"
+import sass from "sass"
 import webpack from "webpack"
+import ESLintPlugin from "eslint-webpack-plugin"
 import TerserPlugin from "terser-webpack-plugin"
 import CssMinimizerPlugin from "css-minimizer-webpack-plugin"
 import MiniCssExtractPlugin from "mini-css-extract-plugin"
@@ -9,16 +11,14 @@ import pages from "./pages"
 import configBuild from "./build"
 import { isDev } from "../utils/EnvUtils"
 import { getFileExtension } from "../utils/IO"
-import common, { regexScripts, regexStyles, styleLoaders } from "./webpack.common.js"
+import postcssOptions from "../postcss.config.js"
+import common, { regexScripts, regexStyles } from "./webpack.common.js"
 
 export default {
   name: "client",
   mode: process.env.NODE_ENV,
   target: "web",
   resolve: common.resolve,
-  experiments: {
-    lazyCompilation: true,
-  },
   stats: isDev(process.env) ? "errors-warnings" : undefined,
   module: {
     rules: [
@@ -32,7 +32,21 @@ export default {
         test: regexStyles,
         use: [
           isDev(process.env) ? "style-loader" : MiniCssExtractPlugin.loader,
-          ...styleLoaders,
+          {
+            loader: "css-loader",
+            options: { importLoaders: 1, sourceMap: isDev(process.env) },
+          },
+          {
+            loader: "postcss-loader",
+            options: {
+              sourceMap: isDev(process.env),
+              postcssOptions: { postcssOptions },
+            },
+          },
+          {
+            loader: "sass-loader",
+            options: { implementation: sass, sourceMap: isDev(process.env) },
+          },
         ],
       },
     ],
@@ -78,10 +92,11 @@ export default {
   devtool: isDev(process.env) ? "eval-source-map" : false,
   plugins: [
     ...common.plugins,
+    new ESLintPlugin({}),
     new webpack.HotModuleReplacementPlugin(),
     new BundleAnalyzerPlugin({
-      openAnalyzer: false,
-      analyzerMode: isDev(process.env) ? undefined : "static",
+      openAnalyzer: !isDev(process.env),
+      analyzerMode: isDev(process.env) ? "server" : "static",
     }),
     new MiniCssExtractPlugin({
       filename: isDev(process.env) ? "[name].css" : "[name].[contenthash].css",
