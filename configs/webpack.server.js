@@ -5,7 +5,7 @@ import NodemonPlugin from "nodemon-webpack-plugin"
 import CopyPlugin from "copy-webpack-plugin"
 import configBuild from "./build"
 import { isDev } from "../utils/EnvUtils"
-import common, { regexStyles } from "./webpack.common.js"
+import common, { styleRegex, fileRegex } from "./webpack.common.js"
 
 export default {
   name: "server",
@@ -19,7 +19,7 @@ export default {
     rules: [
       ...common.rules,
       {
-        test: regexStyles,
+        test: styleRegex,
         use: [
           {
             loader: "css-loader",
@@ -31,6 +31,14 @@ export default {
           },
         ],
       },
+      {
+        test: fileRegex,
+        loader: "file-loader",
+        options: {
+          emitFile: false,
+          name: `${isDev(process.env) ? "[path][name]" : "[contenthash]"}.[ext]`,
+        },
+      },
     ],
   },
   entry: {
@@ -39,7 +47,13 @@ export default {
       `../src/server${isDev(process.env) ? "/dev.js" : ""}`
     ),
   },
+  optimization: {
+    minimize: !isDev(process.env),
+    removeEmptyChunks: !isDev(process.env),
+    removeAvailableModules: !isDev(process.env),
+  },
   output: {
+    pathinfo: !isDev(process.env),
     publicPath: `/${configBuild.folderStatic}/`,
     filename: "index.js",
     path: path.resolve(__dirname, `../${configBuild.folderBuild}`),

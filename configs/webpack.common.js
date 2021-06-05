@@ -2,8 +2,10 @@ import path from "path"
 import WebpackBar from "webpackbar"
 import balbelConfig from "../babel.config.js"
 
-export const regexScripts = /\.(js|jsx)$/
-export const regexStyles = /\.(sa|sc|c)ss$/
+export const scriptRegex = /\.(js|jsx)$/
+export const styleRegex = /\.(sa|sc|c)ss$/
+export const fileRegex =
+  /\.(png|jpe?g|gif|woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/
 
 export default {
   resolve: {
@@ -14,20 +16,12 @@ export default {
   },
   rules: [
     {
-      test: regexScripts,
+      test: scriptRegex,
       exclude: /node_modules/,
       use: {
         loader: "babel-loader",
         options: balbelConfig,
       },
-    },
-    {
-      test: /\.(png|jpe?g|gif|woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-      use: [
-        {
-          loader: "file-loader",
-        },
-      ],
     },
   ],
   plugins: [new WebpackBar()],

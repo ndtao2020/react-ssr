@@ -28,6 +28,9 @@ pages.forEach(({ url, page, title, view, css, scripts }) =>
     const { assetsByChunkName } = devMiddleware.stats.toJson()
     assetsByChunkName[page].forEach((e) => {
       const path = e.trim()
+      if (path.endsWith(".css")) {
+        entryCss.push(`/${configBuild.folderStatic}/${path}`)
+      }
       if (path.endsWith(".js")) {
         entryJS.push({
           async: false,

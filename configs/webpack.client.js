@@ -12,7 +12,7 @@ import configBuild from "./build"
 import { isDev } from "../utils/EnvUtils"
 import { getFileExtension } from "../utils/IO"
 import postcssOptions from "../postcss.config.js"
-import common, { regexScripts, regexStyles } from "./webpack.common.js"
+import common, { scriptRegex, styleRegex, fileRegex } from "./webpack.common.js"
 
 export default {
   name: "client",
@@ -24,14 +24,14 @@ export default {
     rules: [
       ...common.rules,
       {
-        test: regexScripts,
+        test: scriptRegex,
         exclude: /node_modules/,
         loader: "eslint-loader",
       },
       {
-        test: regexStyles,
+        test: styleRegex,
         use: [
-          isDev(process.env) ? "style-loader" : MiniCssExtractPlugin.loader,
+          MiniCssExtractPlugin.loader,
           {
             loader: "css-loader",
             options: { importLoaders: 1, sourceMap: isDev(process.env) },
@@ -49,6 +49,13 @@ export default {
           },
         ],
       },
+      {
+        test: fileRegex,
+        loader: "file-loader",
+        options: {
+          name: `${isDev(process.env) ? "[path][name]" : "[contenthash]"}.[ext]`,
+        },
+      },
     ],
   },
   entry: pages.reduce(
@@ -62,13 +69,17 @@ export default {
       500: path.resolve(__dirname, `../src/client/error/500.jsx`),
     }
   ),
-  optimization: isDev(process.env)
-    ? undefined
-    : {
-        minimize: true,
-        splitChunks: { chunks: "all" },
-        runtimeChunk: { name: ({ name }) => `r.${name}` },
-        minimizer: [
+  optimization: {
+    minimize: !isDev(process.env),
+    splitChunks: isDev(process.env) ? false : { chunks: "all" },
+    runtimeChunk: isDev(process.env)
+      ? undefined
+      : { name: ({ name }) => `r.${name}` },
+    removeEmptyChunks: !isDev(process.env),
+    removeAvailableModules: !isDev(process.env),
+    minimizer: isDev(process.env)
+      ? []
+      : [
           new TerserPlugin({
             terserOptions: {
               output: {
@@ -79,8 +90,9 @@ export default {
           }),
           new CssMinimizerPlugin(),
         ],
-      },
+  },
   output: {
+    pathinfo: !isDev(process.env),
     publicPath: `/${configBuild.folderStatic}/`,
     filename: isDev(process.env) ? `[name].js` : `[name].[contenthash].js`,
     chunkFilename: isDev(process.env) ? "[id].js" : "[id].[chunkhash].js",
@@ -105,28 +117,26 @@ export default {
     new WebpackManifestPlugin({
       fileName: "manifest.json",
       publicPath: `/${configBuild.folderStatic}/`,
-      generate: isDev(process.env)
-        ? undefined
-        : (seed, files, entrypoints) => {
-            let entrypointsCSS = {},
-              entrypointsJS = {}
-            // loops
-            for (var key in entrypoints) {
-              const css = [],
-                js = []
-              entrypoints[key].forEach((entry) => {
-                if (getFileExtension(entry) === "css") {
-                  css.push(entry)
-                }
-                if (getFileExtension(entry) === "js") {
-                  js.push(entry)
-                }
-              })
-              entrypointsCSS[key] = [...css]
-              entrypointsJS[key] = [...js]
+      generate: (seed, files, entrypoints) => {
+        let entrypointsCSS = {},
+          entrypointsJS = {}
+        // loops
+        for (var key in entrypoints) {
+          const css = [],
+            js = []
+          entrypoints[key].forEach((entry) => {
+            if (getFileExtension(entry) === "css") {
+              css.push(entry)
             }
-            return { css: { ...entrypointsCSS }, js: { ...entrypointsJS } }
-          },
+            if (getFileExtension(entry) === "js") {
+              js.push(entry)
+            }
+          })
+          entrypointsCSS[key] = [...css]
+          entrypointsJS[key] = [...js]
+        }
+        return { css: { ...entrypointsCSS }, js: { ...entrypointsJS } }
+      },
     }),
   ],
 }
