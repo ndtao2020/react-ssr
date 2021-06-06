@@ -1,5 +1,4 @@
 import path from "path"
-import sass from "sass"
 import webpack from "webpack"
 import ESLintPlugin from "eslint-webpack-plugin"
 import TerserPlugin from "terser-webpack-plugin"
@@ -11,8 +10,7 @@ import pages from "./pages"
 import configBuild from "./build"
 import { isDev } from "../utils/EnvUtils"
 import { getFileExtension } from "../utils/IO"
-import postcssOptions from "../postcss.config.js"
-import common, { scriptRegex, styleRegex, fileRegex } from "./webpack.common.js"
+import common from "./webpack.common.js"
 
 export default {
   name: "client",
@@ -21,42 +19,7 @@ export default {
   resolve: common.resolve,
   stats: isDev(process.env) ? "errors-warnings" : undefined,
   module: {
-    rules: [
-      ...common.rules,
-      {
-        test: scriptRegex,
-        exclude: /node_modules/,
-        loader: "eslint-loader",
-      },
-      {
-        test: styleRegex,
-        use: [
-          MiniCssExtractPlugin.loader,
-          {
-            loader: "css-loader",
-            options: { importLoaders: 1, sourceMap: isDev(process.env) },
-          },
-          {
-            loader: "postcss-loader",
-            options: {
-              sourceMap: isDev(process.env),
-              postcssOptions: { postcssOptions },
-            },
-          },
-          {
-            loader: "sass-loader",
-            options: { implementation: sass, sourceMap: isDev(process.env) },
-          },
-        ],
-      },
-      {
-        test: fileRegex,
-        loader: "file-loader",
-        options: {
-          name: `${isDev(process.env) ? "[path][name]" : "[contenthash]"}.[ext]`,
-        },
-      },
-    ],
+    rules: common.rules(true),
   },
   entry: pages.reduce(
     (result, { page }) => {
