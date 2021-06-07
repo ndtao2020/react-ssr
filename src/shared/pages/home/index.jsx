@@ -3,7 +3,7 @@ import React from "react";
 
 import IndexNavbar from "@/shared/components/Navbars/IndexNavbar";
 import Footer from "@/shared/components/Footers/Footer";
-import "@/shared/assets/styles/admin/style.scss"
+import "@/shared/assets/styles/global.scss"
 
 export default function Index() {
   return (
@@ -543,7 +543,7 @@ export default function Index() {
                   <h5 className="text-xl font-semibold pb-4 text-center">
                     Landing Page
                   </h5>
-                  <a href to="/landing">
+                  <a href="/landing">
                     <div className="hover:-mt-4 relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg ease-linear transition-all duration-150">
                       <img
                         alt="..."
