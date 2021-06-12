@@ -16,34 +16,24 @@ export default {
     },
   },
   rules: (isClient) => {
-    const config = [
-      {
-        test: /\.(sa|sc|c)ss$/,
-        use: [],
-      },
-    ]
-    config.push({
-      test: scriptRegex,
-      exclude: /node_modules/,
-      loader: "eslint-loader",
-    })
+    const use = []
     if (isClient) {
-      config[0].use.push(MiniCssExtractPlugin.loader)
+      use.push(MiniCssExtractPlugin.loader)
     }
-    config[0].use.push({
+    use.push({
       loader: "css-loader",
       options: { importLoaders: 1, sourceMap: isDev(process.env) },
     })
     if (isClient) {
-      config[0].use.push({
+      use.push({
         loader: "postcss-loader",
         options: {
           sourceMap: isDev(process.env),
-          postcssOptions: { postcssOptions },
+          postcssOptions,
         },
       })
     }
-    config[0].use.push({
+    use.push({
       loader: "sass-loader",
       options: { implementation: sass, sourceMap: isDev(process.env) },
     })
@@ -56,7 +46,15 @@ export default {
           options: balbelConfig,
         },
       },
-      ...config,
+      {
+        test: scriptRegex,
+        exclude: /node_modules/,
+        loader: "eslint-loader",
+      },
+      {
+        test: /\.(sa|sc|c)ss$/,
+        use,
+      },
       {
         test: /\.(png|jpe?g|gif|woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
         loader: "file-loader",

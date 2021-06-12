@@ -3,7 +3,7 @@ import React from "react";
 
 import IndexNavbar from "@/shared/components/Navbars/IndexNavbar";
 import Footer from "@/shared/components/Footers/Footer";
-import "@/shared/assets/styles/global.scss"
+import "@/shared/assets/styles/_global.scss"
 
 export default function Index() {
   return (
