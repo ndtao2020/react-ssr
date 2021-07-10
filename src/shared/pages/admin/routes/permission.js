@@ -1,6 +1,6 @@
 // Routes
-import _routes from "./routes"
-import _includes from "./includes"
+import _routes from './routes'
+import _includes from './includes'
 
 /**
  * @author Nguyễn Đình Tạo
@@ -8,7 +8,7 @@ import _includes from "./includes"
  */
 export function logoutAccount() {
   setTimeout(() => {
-    document.cookie = "_Gsid=; expires = Thu, 01 Jan 1970 00:00:00 GMT"
+    document.cookie = '_Gsid=; expires = Thu, 01 Jan 1970 00:00:00 GMT'
     window.location.href = `/login`
   }, 500)
 }
@@ -17,8 +17,7 @@ export function logoutAccount() {
  * @author Nguyễn Đình Tạo
  * @description Kiểm tra đường link cho Routers
  */
-export const checkLinkURL = (path) =>
-  path === undefined || path === null ? "#" : `${path}`
+export const checkLinkURL = (path) => (path === undefined || path === null ? '#' : `${path}`)
 
 /**
  * @author Nguyễn Đình Tạo
@@ -36,7 +35,7 @@ export function getAllRoute(menus) {
           return true
         }
         return false
-      }),
+      })
     ]
   )
 }

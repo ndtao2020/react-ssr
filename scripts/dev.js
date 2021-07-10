@@ -1,6 +1,6 @@
-import "../conf"
-import webpack from "webpack"
-import serverConfig from "../configs/webpack.server.js"
+import '../conf'
+import webpack from 'webpack'
+import serverConfig from '../configs/webpack.server.js'
 // compiler
 webpack(serverConfig).watch({}, (err, stats) => {
   if (err) throw err

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react"
+import { useCallback, useEffect, useState } from 'react'
 
 const useAsync = (asyncFunction, immediate = true) => {
   const [pending, setPending] = useState(false)

@@ -3,9 +3,7 @@
  * @param {String} key meta cần lấy
  */
 export function getCSRF() {
-  return `${document
-    .querySelector(`meta[name="_csrc9eebe"]`)
-    .getAttribute("content")}`
+  return `${document.querySelector(`meta[name="_csrc9eebe"]`).getAttribute('content')}`
 }
 
 /**
@@ -18,19 +16,19 @@ export function getCSRF() {
 export default (prefix, url, method, body) => {
   let configs = {
     method,
-    credentials: "same-origin", // <-- includes cookies in the request
+    credentials: 'same-origin', // <-- includes cookies in the request
     headers: {
-      Accept: "application/json",
-    },
+      Accept: 'application/json'
+    }
   }
-  if (method !== "GET") {
-    if (method === "POST" || method === "PUT" || method === "PATCH") {
-      configs.headers["Content-Type"] = "application/json"
+  if (method !== 'GET') {
+    if (method === 'POST' || method === 'PUT' || method === 'PATCH') {
+      configs.headers['Content-Type'] = 'application/json'
       if (body) {
-        configs["body"] = body
+        configs['body'] = body
       }
     }
-    configs.headers["CSRF-Token"] = getCSRF()
+    configs.headers['CSRF-Token'] = getCSRF()
   }
   return fetch(`${prefix}${url}`, configs)
     .then((res) => {

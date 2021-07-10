@@ -138,7 +138,7 @@ table.dataTable thead {
   .sorting_asc_disabled:before,
   .sorting_desc_disabled:before {
     right: 1em;
-    content: "\2191";
+    content: '\2191';
     font-size: 15px;
   }
   .sorting:after,
@@ -147,7 +147,7 @@ table.dataTable thead {
   .sorting_asc_disabled:after,
   .sorting_desc_disabled:after {
     right: 0.5em;
-    content: "\2193";
+    content: '\2193';
     font-size: 15px;
   }
   .sorting_asc:before,
@@ -255,7 +255,7 @@ div {
   }
   &.table-responsive > div.dataTables_wrapper > div.row {
     margin: 0;
-    > div[class^="col-"] {
+    > div[class^='col-'] {
       &:first-child,
       &:last-child {
         padding-left: 0;

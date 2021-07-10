@@ -1,32 +1,32 @@
 // Global
-@import "../global";
+@import '../global';
 //Simplebar
-@import "~nprogress/nprogress.css";
+@import '~nprogress/nprogress.css';
 //Simplebar
-@import "~simplebar/src/simplebar.css";
+@import '~simplebar/src/simplebar.css';
 //404
-@import "404";
+@import '404';
 //Loading
-@import "loading";
-@import "nloading";
+@import 'loading';
+@import 'nloading';
 //
-@import "original/variables";
-@import "original/background";
-@import "original/outlinefocus";
-@import "original/typography";
+@import 'original/variables';
+@import 'original/background';
+@import 'original/outlinefocus';
+@import 'original/typography';
 //layouts
-@import "original/layouts";
-@import "original/layouts-colors";
+@import 'original/layouts';
+@import 'original/layouts-colors';
 //components
-@import "original/components";
+@import 'original/components';
 //plugins
-@import "original/plugins";
+@import 'original/plugins';
 //responsive
-@import "original/responsive";
+@import 'original/responsive';
 //404
-@import "original/pagenotfound";
+@import 'original/pagenotfound';
 //Login
-@import "original/login";
+@import 'original/login';
 
 .Material-Toolbar {
   min-height: 40px !important;

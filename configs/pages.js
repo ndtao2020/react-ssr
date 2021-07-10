@@ -1,13 +1,13 @@
 export default [
   {
-    page: "home",
+    page: 'home',
     title: `Home`,
-    url: "/",
-    view: import("../src/shared/pages/home"),
+    url: '/',
+    view: import('../src/shared/pages/home')
   },
   {
-    page: "admin",
+    page: 'admin',
     title: `Web Admin`,
-    url: "/admin*",
-  },
+    url: '/admin*'
+  }
 ]

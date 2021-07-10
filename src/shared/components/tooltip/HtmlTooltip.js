@@ -1,16 +1,16 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { withStyles } from "@material-ui/core/styles"
-import { Typography, Tooltip } from "@material-ui/core"
+import React from 'react'
+import PropTypes from 'prop-types'
+import { withStyles } from '@material-ui/core/styles'
+import { Typography, Tooltip } from '@material-ui/core'
 
 const HtmlTooltip = withStyles((theme) => ({
   tooltip: {
-    backgroundColor: "black",
-    color: "white",
+    backgroundColor: 'black',
+    color: 'white',
     maxWidth: 220,
     fontSize: theme.typography.pxToRem(12),
-    border: "1px solid #dadde9",
-  },
+    border: '1px solid #dadde9'
+  }
 }))(Tooltip)
 
 const ITooltip = (props) => {
@@ -34,8 +34,7 @@ const ITooltip = (props) => {
 ITooltip.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
-    .isRequired,
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired
 }
 
 export default ITooltip

@@ -1,5 +1,5 @@
-import fetchApi from "../../../utils/ClientCallApi"
-import { PUBLIC_API_URL, ALLOWS_API_URL } from "../paths"
+import fetchApi from '../../../utils/ClientCallApi'
+import { PUBLIC_API_URL, ALLOWS_API_URL } from '../paths'
 
 /**
  * @author Nguyễn Đình Tạo
@@ -11,20 +11,16 @@ class Service {
   }
   // ================================[REQUEST]================================
   async Get(url) {
-    return (await fetchApi("", `${this.prefix}${url}`, "GET")).json()
+    return (await fetchApi('', `${this.prefix}${url}`, 'GET')).json()
   }
   async Post(url, data) {
-    return (
-      await fetchApi("", `${this.prefix}${url}`, "POST", JSON.stringify(data))
-    ).json()
+    return (await fetchApi('', `${this.prefix}${url}`, 'POST', JSON.stringify(data))).json()
   }
   async Put(url, data) {
-    return (
-      await fetchApi("", `${this.prefix}${url}`, "PUT", JSON.stringify(data))
-    ).json()
+    return (await fetchApi('', `${this.prefix}${url}`, 'PUT', JSON.stringify(data))).json()
   }
   async Delete(url) {
-    return (await fetchApi("", `${this.prefix}${url}`, "DELETE")).json()
+    return (await fetchApi('', `${this.prefix}${url}`, 'DELETE')).json()
   }
   // ================================[REQUEST]================================
   // =========== [GET] ===========
@@ -52,14 +48,12 @@ class Service {
   // ================================[OTHER - REQUEST - BACKEND]================================
   // =========== [SEARCH] ===========
   SearchAll(pre, param) {
-    return this.Get(`${pre}${this.path}${param || ""}`)
+    return this.Get(`${pre}${this.path}${param || ''}`)
   }
   // =========== [FIND BY ID] ===========
   // Public
   FindById(pre, id, select) {
-    return this.Get(
-      `${pre}${this.path}/findById?id=${id}${select ? `&select=${select}` : ""}`
-    )
+    return this.Get(`${pre}${this.path}/findById?id=${id}${select ? `&select=${select}` : ''}`)
   }
 }
 

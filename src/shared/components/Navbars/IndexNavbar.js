@@ -1,18 +1,16 @@
 /*eslint-disable*/
-import React from "react";
+import React from 'react'
 
-import IndexDropdown from "../Dropdowns/IndexDropdown";
+import IndexDropdown from '../Dropdowns/IndexDropdown'
 
 export default function Navbar(props) {
-  const [navbarOpen, setNavbarOpen] = React.useState(false);
+  const [navbarOpen, setNavbarOpen] = React.useState(false)
   return (
     <>
       <nav className="top-0 fixed z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg bg-white shadow">
         <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
           <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
-            <a href="/"
-              className="text-blueGray-700 text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase"
-            >
+            <a href="/" className="text-blueGray-700 text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase">
               Notus React
             </a>
             <button
@@ -24,10 +22,7 @@ export default function Navbar(props) {
             </button>
           </div>
           <div
-            className={
-              "lg:flex flex-grow items-center bg-white lg:bg-opacity-0 lg:shadow-none" +
-              (navbarOpen ? " block" : " hidden")
-            }
+            className={'lg:flex flex-grow items-center bg-white lg:bg-opacity-0 lg:shadow-none' + (navbarOpen ? ' block' : ' hidden')}
             id="example-navbar-warning"
           >
             <ul className="flex flex-col lg:flex-row list-none mr-auto">
@@ -36,8 +31,7 @@ export default function Navbar(props) {
                   className="hover:text-blueGray-500 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
                   href="https://www.creative-tim.com/learning-lab/tailwind/react/overview/notus?ref=nr-index-navbar"
                 >
-                  <i className="text-blueGray-400 far fa-file-alt text-lg leading-lg mr-2" />{" "}
-                  Docs
+                  <i className="text-blueGray-400 far fa-file-alt text-lg leading-lg mr-2" /> Docs
                 </a>
               </li>
             </ul>
@@ -91,5 +85,5 @@ export default function Navbar(props) {
         </div>
       </nav>
     </>
-  );
+  )
 }

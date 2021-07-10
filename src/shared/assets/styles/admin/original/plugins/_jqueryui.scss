@@ -33,7 +33,7 @@
 .ui-helper-clearfix {
   &:after,
   &:before {
-    content: "";
+    content: '';
     display: table;
     border-collapse: collapse;
   }
@@ -252,13 +252,7 @@
 .ui-slider-handle {
   background: $white-color;
   background: -moz-linear-gradient(top, $white-color 0, #f7f7f7 100%);
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    color-stop(0, $white-color),
-    color-stop(100%, #f7f7f7)
-  );
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, $white-color), color-stop(100%, #f7f7f7));
   background: -webkit-linear-gradient(top, $white-color 0, #f7f7f7 100%);
   background: -o-linear-gradient(top, $white-color 0, #f7f7f7 100%);
   background: -ms-linear-gradient(top, $white-color 0, #f7f7f7 100%);
@@ -268,13 +262,7 @@
   &:focus {
     background: $white-color;
     background: -moz-linear-gradient(top, $white-color 0, #f7f7f7 100%);
-    background: -webkit-gradient(
-      linear,
-      left top,
-      left bottom,
-      color-stop(0, $white-color),
-      color-stop(100%, #f7f7f7)
-    );
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, $white-color), color-stop(100%, #f7f7f7));
     background: -webkit-linear-gradient(top, $white-color 0, #f7f7f7 100%);
     background: -o-linear-gradient(top, $white-color 0, #f7f7f7 100%);
     background: -ms-linear-gradient(top, $white-color 0, #f7f7f7 100%);

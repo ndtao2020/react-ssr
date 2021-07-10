@@ -1,13 +1,13 @@
 /* 	 Background Body */
 body {
   background: #f9fbfd;
-  &[data-background-color="bg1"] {
+  &[data-background-color='bg1'] {
     background: #f9fbfd;
   }
-  &[data-background-color="bg2"] {
+  &[data-background-color='bg2'] {
     background: $white-color;
   }
-  &[data-background-color="bg3"] {
+  &[data-background-color='bg3'] {
     background: #f1f1f1;
   }
 }
@@ -56,10 +56,7 @@ body {
 
 @mixin linear-gradient($direction, $color-stops...) {
   background: nth(nth($color-stops, 2), 1) !important;
-  background: -webkit-linear-gradient(
-    legacy-direction($direction),
-    $color-stops
-  ) !important;
+  background: -webkit-linear-gradient(legacy-direction($direction), $color-stops) !important;
   background: linear-gradient($direction, $color-stops) !important;
 }
 

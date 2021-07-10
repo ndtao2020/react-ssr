@@ -1,4 +1,4 @@
-import constant from "../constant"
+import constant from '../constant'
 
 export default (state = {}, action) => {
   switch (action.type) {
@@ -6,13 +6,13 @@ export default (state = {}, action) => {
       return {
         ...state,
         user: action.payload,
-        loggedIn: true,
+        loggedIn: true
       }
     case constant.USER.logOut:
       return {
         ...state,
         user: {},
-        loggedIn: false,
+        loggedIn: false
       }
     default:
       return state

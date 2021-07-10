@@ -7,7 +7,7 @@
     top: 0;
     bottom: 0;
     position: absolute;
-    content: " ";
+    content: ' ';
     width: 3px;
     background-color: #eeeeee;
     left: 50%;
@@ -17,20 +17,20 @@
     margin-bottom: 20px;
     position: relative;
     &:before {
-      content: " ";
+      content: ' ';
       display: table;
     }
     &:after {
-      content: " ";
+      content: ' ';
       display: table;
       clear: both;
     }
     &:before {
-      content: " ";
+      content: ' ';
       display: table;
     }
     &:after {
-      content: " ";
+      content: ' ';
       display: table;
       clear: both;
     }
@@ -84,7 +84,7 @@
           border-left: 15px solid #eeeeee;
           border-right: 0 solid #eeeeee;
           border-bottom: 15px solid $transparent-bg;
-          content: " ";
+          content: ' ';
         }
         &:after {
           position: absolute;
@@ -95,7 +95,7 @@
           border-left: 14px solid $white-color;
           border-right: 0 solid $white-color;
           border-bottom: 14px solid $transparent-bg;
-          content: " ";
+          content: ' ';
         }
       }
       .timeline-badge {

@@ -1,7 +1,5 @@
-import React from "react"
+import React from 'react'
 
-const SpinnerSmall = () => (
-  <div className="spinner-border-sm spinner-border text-danger" />
-)
+const SpinnerSmall = () => <div className="spinner-border-sm spinner-border text-danger" />
 
 export default SpinnerSmall

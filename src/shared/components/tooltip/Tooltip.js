@@ -1,15 +1,15 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { makeStyles } from "@material-ui/core/styles"
-import Tooltip from "@material-ui/core/Tooltip"
+import React from 'react'
+import PropTypes from 'prop-types'
+import { makeStyles } from '@material-ui/core/styles'
+import Tooltip from '@material-ui/core/Tooltip'
 
 const useStylesBootstrap = makeStyles((theme) => ({
   arrow: {
-    color: theme.palette.common.black,
+    color: theme.palette.common.black
   },
   tooltip: {
-    backgroundColor: theme.palette.common.black,
-  },
+    backgroundColor: theme.palette.common.black
+  }
 }))
 
 const ITooltip = (props) => {
@@ -23,8 +23,7 @@ const ITooltip = (props) => {
 }
 
 ITooltip.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
-    .isRequired,
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired
 }
 
 export default ITooltip

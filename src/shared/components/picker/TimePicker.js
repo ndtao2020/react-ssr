@@ -1,5 +1,5 @@
-import React from "react"
-import DatePicker from "./DatePicker"
+import React from 'react'
+import DatePicker from './DatePicker'
 
 const TimePicker = ({ ...props }) => {
   return <DatePicker enableTime={true} noCalendar={true} {...props} />
@@ -8,7 +8,7 @@ const TimePicker = ({ ...props }) => {
 TimePicker.propTypes = {}
 
 TimePicker.defaultProps = {
-  placeholder: "Vui lòng nhập thời gian",
+  placeholder: 'Vui lòng nhập thời gian'
 }
 
 export default TimePicker

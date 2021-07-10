@@ -82,7 +82,7 @@
     right: -140px;
     width: 300px;
     height: 300px;
-    content: "";
+    content: '';
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.05);
   }
@@ -92,7 +92,7 @@
     right: 80px;
     width: 200px;
     height: 200px;
-    content: "";
+    content: '';
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.05);
   }
@@ -106,7 +106,7 @@
     right: -40%;
     width: 80px;
     height: 80px;
-    content: "";
+    content: '';
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.1);
   }
@@ -116,7 +116,7 @@
     right: 40%;
     width: 70px;
     height: 70px;
-    content: "";
+    content: '';
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.1);
   }
@@ -669,10 +669,10 @@ label {
   }
   .user-stats {
     margin-bottom: 10px;
-    [class^="col"] {
+    [class^='col'] {
       border-right: 1px solid #ebebeb;
     }
-    [class^="col"]:last-child {
+    [class^='col']:last-child {
       border-right: 0px;
     }
     .number {
@@ -727,15 +727,15 @@ label {
       padding-right: 0px !important;
     }
   }
-  [class*="col"] .card:before {
+  [class*='col'] .card:before {
     position: absolute;
     height: calc(100%);
     width: 1px;
     background: #eee;
-    content: "";
+    content: '';
     right: 0px;
   }
-  [class*="col"]:last-child .card:before {
+  [class*='col']:last-child .card:before {
     width: 0px;
   }
 }
@@ -761,7 +761,7 @@ label {
       > .span-mode {
         margin-left: auto;
         &:before {
-          content: "\f28e" !important;
+          content: '\f28e' !important;
           font-family: LineAwesome;
           font-size: 22px;
         }
@@ -769,7 +769,7 @@ label {
       &.collapsed {
         > .span-mode {
           &:before {
-            content: "\f2c2" !important;
+            content: '\f2c2' !important;
             font-size: 22px;
           }
         }

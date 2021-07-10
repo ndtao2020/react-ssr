@@ -107,7 +107,7 @@
 }
 
 .form-check {
-  [type="checkbox"] {
+  [type='checkbox'] {
     &:not(:checked),
     &:checked {
       position: absolute;
@@ -124,7 +124,7 @@
     &:not(:checked) + .form-check-sign:before,
     &:checked + .form-check-sign:before,
     + .form-check-sign:before {
-      content: "";
+      content: '';
       position: absolute;
       left: 0;
       top: 1px;
@@ -137,7 +137,7 @@
     &:not(:checked) + .form-check-sign:after,
     &:checked + .form-check-sign:after,
     + .form-check-sign:after {
-      content: "\f00c";
+      content: '\f00c';
       display: inline-block;
       position: absolute;
       top: -1px;
@@ -149,7 +149,7 @@
       line-height: 0.8;
       color: $primary-color;
       transition: all 0.2s;
-      font-family: "Font Awesome 5 Solid";
+      font-family: 'Font Awesome 5 Solid';
     }
     &:not(:checked) + .form-check-sign:after {
       opacity: 0;
@@ -204,7 +204,7 @@
 
 /*     Radio Input    */
 .form-radio {
-  [type="radio"] {
+  [type='radio'] {
     &:not(:checked),
     &:checked {
       position: absolute;
@@ -220,7 +220,7 @@
       font-weight: $font-weight-normal;
     }
     &:not(:checked) + .form-radio-sign:before {
-      content: "\f18a";
+      content: '\f18a';
       font-size: 22px;
       font-family: LineAwesome;
       position: absolute;
@@ -231,7 +231,7 @@
       color: #bbb;
     }
     &:checked + .form-radio-sign:before {
-      content: "\f18a";
+      content: '\f18a';
       font-size: 22px;
       font-family: LineAwesome;
       position: absolute;
@@ -243,7 +243,7 @@
     }
     &:not(:checked) + .form-radio-sign:after,
     &:checked + .form-radio-sign:after {
-      content: "\f1bc";
+      content: '\f1bc';
       position: absolute;
       left: 0px;
       top: auto;
@@ -617,7 +617,7 @@
 
 /*      Input File      */
 .input-file {
-  input[type="file"],
+  input[type='file'],
   .form-control,
   .form-control-file {
     width: 0.1px;
@@ -633,7 +633,7 @@
       display: block;
     }
   }
-  input[type="file"] + label:not(.error),
+  input[type='file'] + label:not(.error),
   .form-control + label:not(.error),
   .form-control-file + label:not(.error),
   .label-input-file {
@@ -674,7 +674,7 @@
   i.la {
     font-size: 21px;
   }
-  i[class*="flaticon"] {
+  i[class*='flaticon'] {
     font-size: 17px;
   }
 }

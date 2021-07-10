@@ -1,15 +1,15 @@
-import React from "react"
-import { Link } from "react-router-dom"
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 /**
  * Container tất cả các views
  * @param {*} props
  */
 export default function Container({ viewName, viewIcon, match }) {
-  const views = match?.path?.split("/")
+  const views = match?.path?.split('/')
   return (
     <div className="page-header">
-      <h4 className="page-title">{viewName || ""}</h4>
+      <h4 className="page-title">{viewName || ''}</h4>
       {viewName && (
         <ul className="breadcrumbs">
           <li className="nav-home">
@@ -33,8 +33,7 @@ export default function Container({ viewName, viewIcon, match }) {
           <li className="separator">
             <i className="fas fa-chevron-right" />
           </li>
-          <i className={viewIcon || ""} />{" "}
-          <li className="nav-item">{viewName || ""}</li>
+          <i className={viewIcon || ''} /> <li className="nav-item">{viewName || ''}</li>
         </ul>
       )}
     </div>

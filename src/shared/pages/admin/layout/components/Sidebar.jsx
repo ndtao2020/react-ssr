@@ -1,9 +1,9 @@
-import React, { lazy } from "react"
-import { Link } from "react-router-dom"
-import SimpleBarReact from "simplebar-react"
+import React, { lazy } from 'react'
+import { Link } from 'react-router-dom'
+import SimpleBarReact from 'simplebar-react'
 
-const Profile = lazy(() => import("./Profile"))
-const Menu = lazy(() => import("./Menu"))
+const Profile = lazy(() => import('./Profile'))
+const Menu = lazy(() => import('./Menu'))
 
 export default function Sidebar() {
   return (
@@ -12,7 +12,7 @@ export default function Sidebar() {
       <div className="sidebar-wrapper">
         <div className="sidebar-content">
           <Profile />
-          <SimpleBarReact style={{ maxHeight: "calc(100vh - 75px - 50px)" }}>
+          <SimpleBarReact style={{ maxHeight: 'calc(100vh - 75px - 50px)' }}>
             <ul className="nav">
               <li className="nav-item">
                 <Link to="/">

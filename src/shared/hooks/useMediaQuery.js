@@ -1,4 +1,4 @@
-import { useCallback, useMemo } from "react"
+import { useCallback, useMemo } from 'react'
 
 function useMediaQuery() {
   const getMinWidth = useCallback((width) => {

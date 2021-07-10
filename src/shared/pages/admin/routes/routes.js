@@ -1,4 +1,4 @@
-import _danhmuc from "./menus/danhmuc"
+import _danhmuc from './menus/danhmuc'
 
 const routes = [..._danhmuc]
 

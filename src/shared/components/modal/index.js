@@ -1,14 +1,7 @@
-import React from "react"
-import { Button, Modal } from "react-bootstrap"
+import React from 'react'
+import { Button, Modal } from 'react-bootstrap'
 
-const ModalExample = ({
-  title,
-  actionButtonLabel,
-  closeButtonLabel,
-  isOpen,
-  toggle,
-  ...props
-}) => {
+const ModalExample = ({ title, actionButtonLabel, closeButtonLabel, isOpen, toggle, ...props }) => {
   return (
     <div>
       <Modal show={isOpen} onHide={toggle}>

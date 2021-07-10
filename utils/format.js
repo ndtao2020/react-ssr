@@ -1,4 +1,4 @@
-import { format } from "date-fns"
+import { format } from 'date-fns'
 
 /**
  * Thẩm định Email
@@ -13,7 +13,7 @@ export function validateEmail(email) {
  * @param {String} value giá trị cần định dạng
  */
 export function formatDate(value) {
-  return value ? format(new Date(value), "dd/MM/yyyy") : ""
+  return value ? format(new Date(value), 'dd/MM/yyyy') : ''
 }
 
 /**
@@ -21,7 +21,7 @@ export function formatDate(value) {
  * @param {String} value giá trị cần định dạng
  */
 export function formatTime(value) {
-  return value ? format(new Date(value), "HH:mm:ss") : ""
+  return value ? format(new Date(value), 'HH:mm:ss') : ''
 }
 
 /**
@@ -29,7 +29,7 @@ export function formatTime(value) {
  * @param {String} value giá trị cần định dạng
  */
 export function formatDatetime(value) {
-  return value ? format(new Date(value), "dd/MM/yyyy HH:mm:ss") : ""
+  return value ? format(new Date(value), 'dd/MM/yyyy HH:mm:ss') : ''
 }
 
 /**
@@ -45,10 +45,10 @@ export function formatISODate(value) {
  * @param {Intl} value
  * @param currencyCode
  */
-export function formatCurrency(value, currencyCode = "VND") {
+export function formatCurrency(value, currencyCode = 'VND') {
   return new Intl.NumberFormat({
-    style: "currency",
-    currency: currencyCode,
+    style: 'currency',
+    currency: currencyCode
   }).format(value !== undefined ? value : 0)
 }
 

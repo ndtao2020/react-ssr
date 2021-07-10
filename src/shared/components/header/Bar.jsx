@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react"
-import PropTypes from "prop-types"
-import { PREFIX_UPLOAD_URL, UPLOAD_API_URL } from "../../paths"
-import fetchApi from "../../../../utils/ClientCallApi"
-import configBuild from "../../../../configs/build"
+import React, { useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
+import { PREFIX_UPLOAD_URL, UPLOAD_API_URL } from '../../paths'
+import fetchApi from '../../../../utils/ClientCallApi'
+import configBuild from '../../../../configs/build'
 
 // Export
 export default function Bar({ isLogin }) {
@@ -14,9 +14,9 @@ export default function Bar({ isLogin }) {
   useEffect(() => {
     if (isLogin) {
       // Lấy thông tin tài khoản
-      setName("123")
+      setName('123')
       // Lấy thông tin avartar tài khoản
-      setIdAvartar("1232")
+      setIdAvartar('1232')
     }
   }, [isLogin])
   return (
@@ -39,9 +39,9 @@ export default function Bar({ isLogin }) {
         )}
         {isLogin && (
           <div className="head-profile">
-            <div className={`btn-group-sm dropdown ${toggle ? "show" : ""}`}>
+            <div className={`btn-group-sm dropdown ${toggle ? 'show' : ''}`}>
               <a
-                style={{ cursor: "pointer", color: "white" }}
+                style={{ cursor: 'pointer', color: 'white' }}
                 aria-haspopup="true"
                 className="nav-link dropdown-toggle"
                 aria-expanded="true"
@@ -50,37 +50,21 @@ export default function Bar({ isLogin }) {
                 <img
                   className="head-avatar rounded-circle"
                   alt="avartar"
-                  src={
-                    idAvartar
-                      ? `${PREFIX_UPLOAD_URL}${UPLOAD_API_URL}/Picture/image?id=${idAvartar}`
-                      : `/${configBuild.folderAssets}/m.png`
-                  }
+                  src={idAvartar ? `${PREFIX_UPLOAD_URL}${UPLOAD_API_URL}/Picture/image?id=${idAvartar}` : `/${configBuild.folderAssets}/m.png`}
                 />
-                {name || ""}
+                {name || ''}
               </a>
-              <div
-                tabIndex={-1}
-                role="menu"
-                aria-hidden="false"
-                className={`dropdown-menu ${toggle ? "show" : ""}`}
-              >
-                <a
-                  href="/profile"
-                  tabIndex={0}
-                  role="menuitem"
-                  className="dropdown-item"
-                >
+              <div tabIndex={-1} role="menu" aria-hidden="false" className={`dropdown-menu ${toggle ? 'show' : ''}`}>
+                <a href="/profile" tabIndex={0} role="menuitem" className="dropdown-item">
                   Thông tin cá nhân
                 </a>
                 <div tabIndex={-1} className="dropdown-divider" />
                 <a
                   tabIndex={0}
-                  style={{ cursor: "pointer" }}
+                  style={{ cursor: 'pointer' }}
                   role="menuitem"
                   className="dropdown-item"
-                  onClick={() =>
-                    fetchApi("", "/logout", "POST").then(() => location.reload())
-                  }
+                  onClick={() => fetchApi('', '/logout', 'POST').then(() => location.reload())}
                 >
                   Đăng xuất
                 </a>
@@ -94,5 +78,5 @@ export default function Bar({ isLogin }) {
 }
 
 Bar.propTypes = {
-  isLogin: PropTypes.bool.isRequired,
+  isLogin: PropTypes.bool.isRequired
 }

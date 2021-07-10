@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 
 export default function Dashboard() {
   return (
@@ -88,10 +88,7 @@ export default function Dashboard() {
               <div className="card-head-row">
                 <div className="card-title">User Statistics</div>
                 <div className="card-tools">
-                  <a
-                    href="/"
-                    className="btn btn-info btn-border btn-round btn-sm mr-2"
-                  >
+                  <a href="/" className="btn btn-info btn-border btn-round btn-sm mr-2">
                     <span className="btn-label">
                       <i className="fa fa-pencil" />
                     </span>
@@ -107,7 +104,7 @@ export default function Dashboard() {
               </div>
             </div>
             <div className="card-body">
-              <div className="chart-container" style={{ minHeight: "375px" }}>
+              <div className="chart-container" style={{ minHeight: '375px' }}>
                 <canvas id="statisticsChart" />
               </div>
               <div id="myChartLegend" />
@@ -155,9 +152,7 @@ export default function Dashboard() {
                   </button>
                 </div>
               </div>
-              <p className="card-category">
-                Map of the distribution of users around the world
-              </p>
+              <p className="card-category">Map of the distribution of users around the world</p>
             </div>
             <div className="card-body">
               <div className="row">
@@ -168,10 +163,7 @@ export default function Dashboard() {
                         <tr>
                           <td>
                             <div className="flag">
-                              <img
-                                src="../assets/img/flags/id.png"
-                                alt="indonesia"
-                              />
+                              <img src="../assets/img/flags/id.png" alt="indonesia" />
                             </div>
                           </td>
                           <td>Indonesia</td>
@@ -181,10 +173,7 @@ export default function Dashboard() {
                         <tr>
                           <td>
                             <div className="flag">
-                              <img
-                                src="../assets/img/flags/us.png"
-                                alt="united states"
-                              />
+                              <img src="../assets/img/flags/us.png" alt="united states" />
                             </div>
                           </td>
                           <td>USA</td>
@@ -194,10 +183,7 @@ export default function Dashboard() {
                         <tr>
                           <td>
                             <div className="flag">
-                              <img
-                                src="../assets/img/flags/au.png"
-                                alt="australia"
-                              />
+                              <img src="../assets/img/flags/au.png" alt="australia" />
                             </div>
                           </td>
                           <td>Australia</td>
@@ -257,11 +243,7 @@ export default function Dashboard() {
             <div className="card-body pb-0">
               <div className="d-flex">
                 <div className="avatar">
-                  <img
-                    src="../assets/img/logoproduct.svg"
-                    alt="..."
-                    className="avatar-img rounded-circle"
-                  />
+                  <img src="../assets/img/logoproduct.svg" alt="..." className="avatar-img rounded-circle" />
                 </div>
                 <div className="flex-1 pt-1 ml-2">
                   <h5 className="fw-bold mb-1">CSS</h5>
@@ -274,11 +256,7 @@ export default function Dashboard() {
               <div className="separator-dashed" />
               <div className="d-flex">
                 <div className="avatar">
-                  <img
-                    src="../assets/img/logoproduct2.svg"
-                    alt="..."
-                    className="avatar-img rounded-circle"
-                  />
+                  <img src="../assets/img/logoproduct2.svg" alt="..." className="avatar-img rounded-circle" />
                 </div>
                 <div className="flex-1 pt-1 ml-2">
                   <h5 className="fw-bold mb-1">J.CO Donuts</h5>
@@ -291,11 +269,7 @@ export default function Dashboard() {
               <div className="separator-dashed" />
               <div className="d-flex">
                 <div className="avatar">
-                  <img
-                    src="../assets/img/logoproduct3.svg"
-                    alt="..."
-                    className="avatar-img rounded-circle"
-                  />
+                  <img src="../assets/img/logoproduct3.svg" alt="..." className="avatar-img rounded-circle" />
                 </div>
                 <div className="flex-1 pt-1 ml-2">
                   <h5 className="fw-bold mb-1">Ready Pro</h5>
@@ -319,11 +293,7 @@ export default function Dashboard() {
               <div className="card-list">
                 <div className="item-list">
                   <div className="avatar">
-                    <img
-                      src="../assets/img/jm_denis.jpg"
-                      alt="..."
-                      className="avatar-img rounded-circle"
-                    />
+                    <img src="../assets/img/jm_denis.jpg" alt="..." className="avatar-img rounded-circle" />
                   </div>
                   <div className="info-user ml-3">
                     <div className="username">Jimmy Denis</div>
@@ -335,11 +305,7 @@ export default function Dashboard() {
                 </div>
                 <div className="item-list">
                   <div className="avatar">
-                    <img
-                      src="../assets/img/chadengle.jpg"
-                      alt="..."
-                      className="avatar-img rounded-circle"
-                    />
+                    <img src="../assets/img/chadengle.jpg" alt="..." className="avatar-img rounded-circle" />
                   </div>
                   <div className="info-user ml-3">
                     <div className="username">Chad</div>
@@ -351,11 +317,7 @@ export default function Dashboard() {
                 </div>
                 <div className="item-list">
                   <div className="avatar">
-                    <img
-                      src="../assets/img/talha.jpg"
-                      alt="..."
-                      className="avatar-img rounded-circle"
-                    />
+                    <img src="../assets/img/talha.jpg" alt="..." className="avatar-img rounded-circle" />
                   </div>
                   <div className="info-user ml-3">
                     <div className="username">Talha</div>
@@ -367,11 +329,7 @@ export default function Dashboard() {
                 </div>
                 <div className="item-list">
                   <div className="avatar">
-                    <img
-                      src="../assets/img/mlane.jpg"
-                      alt="..."
-                      className="avatar-img rounded-circle"
-                    />
+                    <img src="../assets/img/mlane.jpg" alt="..." className="avatar-img rounded-circle" />
                   </div>
                   <div className="info-user ml-3">
                     <div className="username">John Doe</div>
@@ -383,11 +341,7 @@ export default function Dashboard() {
                 </div>
                 <div className="item-list">
                   <div className="avatar">
-                    <img
-                      src="../assets/img/talha.jpg"
-                      alt="..."
-                      className="avatar-img rounded-circle"
-                    />
+                    <img src="../assets/img/talha.jpg" alt="..." className="avatar-img rounded-circle" />
                   </div>
                   <div className="info-user ml-3">
                     <div className="username">Talha</div>
@@ -399,11 +353,7 @@ export default function Dashboard() {
                 </div>
                 <div className="item-list">
                   <div className="avatar">
-                    <img
-                      src="../assets/img/jm_denis.jpg"
-                      alt="..."
-                      className="avatar-img rounded-circle"
-                    />
+                    <img src="../assets/img/jm_denis.jpg" alt="..." className="avatar-img rounded-circle" />
                   </div>
                   <div className="info-user ml-3">
                     <div className="username">Jimmy Denis</div>
@@ -466,8 +416,7 @@ export default function Dashboard() {
                     Sep 23
                   </time>
                   <span className="text">
-                    Joined the group{" "}
-                    <a href="single-group.php">Boardsmanship Forum</a>
+                    Joined the group <a href="single-group.php">Boardsmanship Forum</a>
                   </span>
                 </li>
                 <li className="feed-item feed-item-warning">
@@ -504,44 +453,19 @@ export default function Dashboard() {
               <div className="card-head-row">
                 <div className="card-title">Support Tickets</div>
                 <div className="card-tools">
-                  <ul
-                    className="nav nav-pills nav-secondary nav-pills-no-bd nav-sm"
-                    id="pills-tab"
-                    role="tablist"
-                  >
+                  <ul className="nav nav-pills nav-secondary nav-pills-no-bd nav-sm" id="pills-tab" role="tablist">
                     <li className="nav-item">
-                      <a
-                        className="nav-link"
-                        id="pills-today"
-                        data-toggle="pill"
-                        href="/pills-today"
-                        role="tab"
-                        aria-selected="true"
-                      >
+                      <a className="nav-link" id="pills-today" data-toggle="pill" href="/pills-today" role="tab" aria-selected="true">
                         Today
                       </a>
                     </li>
                     <li className="nav-item">
-                      <a
-                        className="nav-link active"
-                        id="pills-week"
-                        data-toggle="pill"
-                        href="/pills-week"
-                        role="tab"
-                        aria-selected="false"
-                      >
+                      <a className="nav-link active" id="pills-week" data-toggle="pill" href="/pills-week" role="tab" aria-selected="false">
                         Week
                       </a>
                     </li>
                     <li className="nav-item">
-                      <a
-                        className="nav-link"
-                        id="pills-month"
-                        data-toggle="pill"
-                        href="/pills-month"
-                        role="tab"
-                        aria-selected="false"
-                      >
+                      <a className="nav-link" id="pills-month" data-toggle="pill" href="/pills-month" role="tab" aria-selected="false">
                         Month
                       </a>
                     </li>
@@ -552,17 +476,13 @@ export default function Dashboard() {
             <div className="card-body">
               <div className="d-flex">
                 <div className="avatar avatar-online">
-                  <span className="avatar-title rounded-circle border border-white bg-info">
-                    J
-                  </span>
+                  <span className="avatar-title rounded-circle border border-white bg-info">J</span>
                 </div>
                 <div className="flex-1 ml-3 pt-1">
                   <h5 className="text-uppercase fw-bold mb-1">
                     Joko Subianto <span className="text-warning pl-3">pending</span>
                   </h5>
-                  <span className="text-muted">
-                    I am facing some trouble with my viewport. When i start my
-                  </span>
+                  <span className="text-muted">I am facing some trouble with my viewport. When i start my</span>
                 </div>
                 <div className="float-right pt-1">
                   <small className="text-muted">8:40 PM</small>
@@ -571,17 +491,13 @@ export default function Dashboard() {
               <div className="separator-dashed" />
               <div className="d-flex">
                 <div className="avatar avatar-offline">
-                  <span className="avatar-title rounded-circle border border-white bg-secondary">
-                    P
-                  </span>
+                  <span className="avatar-title rounded-circle border border-white bg-secondary">P</span>
                 </div>
                 <div className="flex-1 ml-3 pt-1">
                   <h5 className="text-uppercase fw-bold mb-1">
                     Prabowo Widodo <span className="text-success pl-3">open</span>
                   </h5>
-                  <span className="text-muted">
-                    I have some query regarding the license issue.
-                  </span>
+                  <span className="text-muted">I have some query regarding the license issue.</span>
                 </div>
                 <div className="float-right pt-1">
                   <small className="text-muted">1 Day Ago</small>
@@ -590,17 +506,13 @@ export default function Dashboard() {
               <div className="separator-dashed" />
               <div className="d-flex">
                 <div className="avatar avatar-away">
-                  <span className="avatar-title rounded-circle border border-white bg-danger">
-                    L
-                  </span>
+                  <span className="avatar-title rounded-circle border border-white bg-danger">L</span>
                 </div>
                 <div className="flex-1 ml-3 pt-1">
                   <h5 className="text-uppercase fw-bold mb-1">
                     Lee Chong Wei <span className="text-muted pl-3">closed</span>
                   </h5>
-                  <span className="text-muted">
-                    Is there any update plan for RTL version near future?
-                  </span>
+                  <span className="text-muted">Is there any update plan for RTL version near future?</span>
                 </div>
                 <div className="float-right pt-1">
                   <small className="text-muted">2 Days Ago</small>
@@ -609,17 +521,13 @@ export default function Dashboard() {
               <div className="separator-dashed" />
               <div className="d-flex">
                 <div className="avatar avatar-offline">
-                  <span className="avatar-title rounded-circle border border-white bg-secondary">
-                    P
-                  </span>
+                  <span className="avatar-title rounded-circle border border-white bg-secondary">P</span>
                 </div>
                 <div className="flex-1 ml-3 pt-1">
                   <h5 className="text-uppercase fw-bold mb-1">
                     Peter Parker <span className="text-success pl-3">open</span>
                   </h5>
-                  <span className="text-muted">
-                    I have some query regarding the license issue.
-                  </span>
+                  <span className="text-muted">I have some query regarding the license issue.</span>
                 </div>
                 <div className="float-right pt-1">
                   <small className="text-muted">2 Day Ago</small>
@@ -628,17 +536,13 @@ export default function Dashboard() {
               <div className="separator-dashed" />
               <div className="d-flex">
                 <div className="avatar avatar-away">
-                  <span className="avatar-title rounded-circle border border-white bg-danger">
-                    L
-                  </span>
+                  <span className="avatar-title rounded-circle border border-white bg-danger">L</span>
                 </div>
                 <div className="flex-1 ml-3 pt-1">
                   <h5 className="text-uppercase fw-bold mb-1">
                     Logan Paul <span className="text-muted pl-3">closed</span>
                   </h5>
-                  <span className="text-muted">
-                    Is there any update plan for RTL version near future?
-                  </span>
+                  <span className="text-muted">Is there any update plan for RTL version near future?</span>
                 </div>
                 <div className="float-right pt-1">
                   <small className="text-muted">2 Days Ago</small>

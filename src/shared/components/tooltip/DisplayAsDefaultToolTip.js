@@ -1,6 +1,6 @@
-import React from "react"
-import PropTypes from "prop-types"
-import "./styles.scss"
+import React from 'react'
+import PropTypes from 'prop-types'
+import './styles.scss'
 
 function DisplayAsDefaultToolTip({ toolTip, renderLabel }) {
   return (
@@ -13,7 +13,7 @@ function DisplayAsDefaultToolTip({ toolTip, renderLabel }) {
 
 DisplayAsDefaultToolTip.propTypes = {
   toolTip: PropTypes.string.isRequired,
-  renderLabel: PropTypes.func.isRequired,
+  renderLabel: PropTypes.func.isRequired
 }
 
 export default React.memo(DisplayAsDefaultToolTip)

@@ -1,25 +1,25 @@
-import path from "path"
-import webpack from "webpack"
-import ESLintPlugin from "eslint-webpack-plugin"
-import TerserPlugin from "terser-webpack-plugin"
-import CssMinimizerPlugin from "css-minimizer-webpack-plugin"
-import MiniCssExtractPlugin from "mini-css-extract-plugin"
-import { WebpackManifestPlugin } from "webpack-manifest-plugin"
-import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer"
-import pages from "./pages"
-import configBuild from "./build"
-import { isDev } from "../utils/EnvUtils"
-import { getFileExtension } from "../utils/IO"
-import common from "./webpack.common.js"
+import path from 'path'
+import webpack from 'webpack'
+import ESLintPlugin from 'eslint-webpack-plugin'
+import TerserPlugin from 'terser-webpack-plugin'
+import CssMinimizerPlugin from 'css-minimizer-webpack-plugin'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import { WebpackManifestPlugin } from 'webpack-manifest-plugin'
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
+import pages from './pages'
+import configBuild from './build'
+import { isDev } from '../utils/EnvUtils'
+import { getFileExtension } from '../utils/IO'
+import common from './webpack.common.js'
 
 export default {
-  name: "client",
+  name: 'client',
   mode: process.env.NODE_ENV,
-  target: "web",
+  target: 'web',
   resolve: common.resolve,
-  stats: isDev(process.env) ? "errors-warnings" : undefined,
+  stats: isDev(process.env) ? 'errors-warnings' : undefined,
   module: {
-    rules: common.rules(true),
+    rules: common.rules(true)
   },
   entry: pages.reduce(
     (result, { page }) => {
@@ -29,15 +29,13 @@ export default {
     },
     {
       404: path.resolve(__dirname, `../src/client/error/404.jsx`),
-      500: path.resolve(__dirname, `../src/client/error/500.jsx`),
+      500: path.resolve(__dirname, `../src/client/error/500.jsx`)
     }
   ),
   optimization: {
     minimize: !isDev(process.env),
-    splitChunks: isDev(process.env) ? false : { chunks: "all" },
-    runtimeChunk: isDev(process.env)
-      ? undefined
-      : { name: ({ name }) => `r.${name}` },
+    splitChunks: isDev(process.env) ? false : { chunks: 'all' },
+    runtimeChunk: isDev(process.env) ? undefined : { name: ({ name }) => `r.${name}` },
     removeEmptyChunks: !isDev(process.env),
     removeAvailableModules: !isDev(process.env),
     minimizer: isDev(process.env)
@@ -46,39 +44,36 @@ export default {
           new TerserPlugin({
             terserOptions: {
               output: {
-                comments: false,
+                comments: false
               },
-              compress: true,
-            },
+              compress: true
+            }
           }),
-          new CssMinimizerPlugin(),
-        ],
+          new CssMinimizerPlugin()
+        ]
   },
   output: {
     pathinfo: !isDev(process.env),
     publicPath: `/${configBuild.folderStatic}/`,
     filename: isDev(process.env) ? `[name].js` : `[name].[contenthash].js`,
-    chunkFilename: isDev(process.env) ? "[id].js" : "[id].[chunkhash].js",
-    path: path.resolve(
-      __dirname,
-      `../${configBuild.folderBuild}/${configBuild.folderStatic}`
-    ),
+    chunkFilename: isDev(process.env) ? '[id].js' : '[id].[chunkhash].js',
+    path: path.resolve(__dirname, `../${configBuild.folderBuild}/${configBuild.folderStatic}`)
   },
-  devtool: isDev(process.env) ? "eval-source-map" : false,
+  devtool: isDev(process.env) ? 'eval-source-map' : false,
   plugins: [
     ...common.plugins,
     new ESLintPlugin({}),
     new webpack.HotModuleReplacementPlugin(),
     new BundleAnalyzerPlugin({
       openAnalyzer: !isDev(process.env),
-      analyzerMode: isDev(process.env) ? "server" : "static",
+      analyzerMode: isDev(process.env) ? 'server' : 'static'
     }),
     new MiniCssExtractPlugin({
-      filename: isDev(process.env) ? "[name].css" : "[name].[contenthash].css",
-      chunkFilename: isDev(process.env) ? "[id].css" : "[id].[chunkhash].css",
+      filename: isDev(process.env) ? '[name].css' : '[name].[contenthash].css',
+      chunkFilename: isDev(process.env) ? '[id].css' : '[id].[chunkhash].css'
     }),
     new WebpackManifestPlugin({
-      fileName: "manifest.json",
+      fileName: 'manifest.json',
       publicPath: `/${configBuild.folderStatic}/`,
       generate: (seed, files, entrypoints) => {
         let entrypointsCSS = {},
@@ -88,10 +83,10 @@ export default {
           const css = [],
             js = []
           entrypoints[key].forEach((entry) => {
-            if (getFileExtension(entry) === "css") {
+            if (getFileExtension(entry) === 'css') {
               css.push(entry)
             }
-            if (getFileExtension(entry) === "js") {
+            if (getFileExtension(entry) === 'js') {
               js.push(entry)
             }
           })
@@ -99,7 +94,7 @@ export default {
           entrypointsJS[key] = [...js]
         }
         return { css: { ...entrypointsCSS }, js: { ...entrypointsJS } }
-      },
-    }),
-  ],
+      }
+    })
+  ]
 }

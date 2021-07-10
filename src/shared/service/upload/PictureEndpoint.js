@@ -1,8 +1,8 @@
-import { Upload } from "./Upload"
+import { Upload } from './Upload'
 
 class PictureEndpoint extends Upload {
   constructor() {
-    super("/Picture")
+    super('/Picture')
   }
 }
 

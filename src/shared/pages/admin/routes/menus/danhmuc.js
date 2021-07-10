@@ -1,10 +1,10 @@
-import { lazy } from "react"
+import { lazy } from 'react'
 
 const routes = [
   {
-    path: "/view/danh-muc/danh-muc-dong-ca",
-    component: lazy(() => import("../../views/base/Dashboard/Dashboard")),
-  },
+    path: '/view/danh-muc/danh-muc-dong-ca',
+    component: lazy(() => import('../../views/base/Dashboard/Dashboard'))
+  }
 ]
 
 export default routes

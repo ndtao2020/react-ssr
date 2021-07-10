@@ -1,11 +1,11 @@
-import { combineReducers } from "redux"
+import { combineReducers } from 'redux'
 // reducers
-import menuReducer from "./menuReducer"
-import userReducer from "./userReducer"
+import menuReducer from './menuReducer'
+import userReducer from './userReducer'
 
 const rootReducer = combineReducers({
   menu: menuReducer,
-  user: userReducer,
+  user: userReducer
 })
 
 export default rootReducer

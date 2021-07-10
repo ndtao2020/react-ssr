@@ -1,10 +1,10 @@
-import React from "react"
-import PropTypes from "prop-types"
-import Flatpickr from "react-flatpickr"
-import "flatpickr/dist/themes/material_blue.css"
-import { Vietnamese } from "flatpickr/dist/l10n/vn"
-import { formatISO } from "date-fns"
-import { formatDate, formatDatetime, formatTime } from "../../../../utils/format"
+import React from 'react'
+import PropTypes from 'prop-types'
+import Flatpickr from 'react-flatpickr'
+import 'flatpickr/dist/themes/material_blue.css'
+import { Vietnamese } from 'flatpickr/dist/l10n/vn'
+import { formatISO } from 'date-fns'
+import { formatDate, formatDatetime, formatTime } from '../../../../utils/format'
 
 const DatePicker = ({ value, onChange, placeholder, enableTime, noCalendar }) => (
   <Flatpickr
@@ -13,7 +13,7 @@ const DatePicker = ({ value, onChange, placeholder, enableTime, noCalendar }) =>
     options={{
       enableTime,
       noCalendar,
-      mode: "single",
+      mode: 'single',
       formatDate: (date) => {
         if (enableTime === true && noCalendar === true) {
           return formatTime(date)
@@ -23,7 +23,7 @@ const DatePicker = ({ value, onChange, placeholder, enableTime, noCalendar }) =>
         }
         return formatDate(date)
       },
-      locale: Vietnamese,
+      locale: Vietnamese
     }}
     render={({ defaultValue, ...props }, ref) => {
       return (
@@ -34,7 +34,7 @@ const DatePicker = ({ value, onChange, placeholder, enableTime, noCalendar }) =>
           defaultValue={defaultValue}
           placeholder={placeholder}
           className="form-control"
-          style={{ background: "white", color: "black" }}
+          style={{ background: 'white', color: 'black' }}
         />
       )
     }}
@@ -46,13 +46,13 @@ DatePicker.propTypes = {
   onChange: PropTypes.func.isRequired,
   placeholder: PropTypes.string.isRequired,
   enableTime: PropTypes.bool.isRequired,
-  noCalendar: PropTypes.bool.isRequired,
+  noCalendar: PropTypes.bool.isRequired
 }
 
 DatePicker.defaultProps = {
   enableTime: false,
   noCalendar: false,
-  placeholder: "Vui lòng nhập ngày tháng",
+  placeholder: 'Vui lòng nhập ngày tháng'
 }
 
 export default DatePicker

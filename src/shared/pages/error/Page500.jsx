@@ -1,5 +1,5 @@
-import React from "react"
-import PageError from "./PageError"
+import React from 'react'
+import PageError from './PageError'
 
 export default function Page500() {
   return (

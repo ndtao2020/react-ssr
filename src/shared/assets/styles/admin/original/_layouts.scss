@@ -127,7 +127,7 @@ body {
   z-index: 1;
   width: 3px;
   height: 100%;
-  content: "";
+  content: '';
   left: 0;
   top: 0;
 }
@@ -321,7 +321,7 @@ body {
           //   font-size: 18px;
           //   line-height: 30px;
           // }
-          &[class^="flaticon-"] {
+          &[class^='flaticon-'] {
             font-size: 20px;
           }
         }
@@ -340,7 +340,7 @@ body {
           color: #9a9a9a;
         }
       }
-      a[data-toggle="collapse"][aria-expanded="true"] {
+      a[data-toggle='collapse'][aria-expanded='true'] {
         background: transparent;
         p {
           color: #575962;
@@ -385,7 +385,7 @@ body {
           margin-left: 25px;
           opacity: 0.85;
           &:before {
-            content: "";
+            content: '';
             height: 4px;
             width: 4px;
             background: rgba(131, 132, 138, 0.89);
@@ -555,7 +555,7 @@ body {
         position: absolute;
         top: -8px;
         right: 32px;
-        content: "";
+        content: '';
       }
     }
   }
@@ -808,7 +808,7 @@ body {
         .user {
           padding-left: 0px;
           padding-right: 0px;
-          [class^="avatar-"] {
+          [class^='avatar-'] {
             float: none !important;
             margin: auto;
           }
@@ -862,7 +862,7 @@ body {
         .user {
           padding-left: 15px;
           padding-right: 15px;
-          [class^="avatar-"] {
+          [class^='avatar-'] {
             float: left !important;
             margin-right: 11px !important;
           }

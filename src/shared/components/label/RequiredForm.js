@@ -1,20 +1,19 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { Label } from "."
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Label } from '.'
 
 const Required = ({ text, children, ...attributes }) => (
   <Label {...attributes}>
-    {children} <span style={{ color: "red" }}>{text}</span>
+    {children} <span style={{ color: 'red' }}>{text}</span>
   </Label>
 )
 
 Required.propTypes = {
   text: PropTypes.string.isRequired,
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
-    .isRequired,
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired
 }
 Required.defaultProps = {
-  text: "*",
+  text: '*'
 }
 
 export default Required

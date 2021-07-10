@@ -1,7 +1,7 @@
-import React, { lazy } from "react"
+import React, { lazy } from 'react'
 
-const NavbarSearch = lazy(() => import("./NavbarSearch"))
-const NavbarInfo = lazy(() => import("./NavbarInfo"))
+const NavbarSearch = lazy(() => import('./NavbarSearch'))
+const NavbarInfo = lazy(() => import('./NavbarInfo'))
 
 export default function NavbarHeader(props) {
   return (

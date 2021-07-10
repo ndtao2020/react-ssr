@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react"
-import nprogress from "nprogress"
+import React, { useEffect, useState } from 'react'
+import nprogress from 'nprogress'
 
 function Nprogress({ children }) {
   const [loadedComponent, setComponent] = useState(null)

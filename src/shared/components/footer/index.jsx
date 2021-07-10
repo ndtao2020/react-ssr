@@ -1,16 +1,8 @@
-import React from "react"
-import "./style.scss"
-import { Form, FormGroup, FormControl, Button, InputGroup } from "react-bootstrap"
+import React from 'react'
+import './style.scss'
+import { Form, FormGroup, FormControl, Button, InputGroup } from 'react-bootstrap'
 
-const about = [
-  "Nơi làm việc",
-  "Về chúng tôi",
-  "Giá cả",
-  "Đấu giá",
-  "Danh sách",
-  "Điều khoản đấu giá",
-  "Liên hệ",
-]
+const about = ['Nơi làm việc', 'Về chúng tôi', 'Giá cả', 'Đấu giá', 'Danh sách', 'Điều khoản đấu giá', 'Liên hệ']
 
 export default function Footer() {
   return (
@@ -18,7 +10,7 @@ export default function Footer() {
       <div className="container m-hidden-view">
         <div className="row">
           <div className="col-md-3">
-            <h5 className={"mb-0"}>Thông tin liên hệ</h5>
+            <h5 className={'mb-0'}>Thông tin liên hệ</h5>
           </div>
           <div className="col-md-3">
             <h5>Chính sách và điều khoản</h5>
@@ -48,16 +40,10 @@ export default function Footer() {
               <Form.Label>Thanh toán</Form.Label>
               <div className="pay d-flex">
                 <div>
-                  <img
-                    src="/assets/img/payment_partner_logo/viettel_pay.svg"
-                    alt="Viettel Pay"
-                  />
+                  <img src="/assets/img/payment_partner_logo/viettel_pay.svg" alt="Viettel Pay" />
                 </div>
                 <div>
-                  <img
-                    src="/assets/img/payment_partner_logo/vn_pay.png"
-                    alt="VN Pay"
-                  />
+                  <img src="/assets/img/payment_partner_logo/vn_pay.png" alt="VN Pay" />
                 </div>
               </div>
             </FormGroup>
@@ -69,8 +55,7 @@ export default function Footer() {
       <div className="container d-none d-md-block">
         <div className="copyright">
           <span>
-            © 2020 Copyright ©All rights reserved{" "}
-            <b>Global Digital Transformation</b>
+            © 2020 Copyright ©All rights reserved <b>Global Digital Transformation</b>
           </span>
           <div className="social">
             <i className="fab fa-facebook-f" />

@@ -1,13 +1,20 @@
 module.exports = {
   plugins: [
-    "postcss-preset-env",
-    [require("autoprefixer"), { remove: false }],
-    [require("tailwindcss"), { remove: false }],
+    'postcss-preset-env',
+    [require('autoprefixer'), { remove: false }],
+    [require('tailwindcss'), { remove: false }],
     [
-      require("cssnano"),
+      require('cssnano'),
       {
-        preset: "default",
-      },
-    ],
-  ],
+        preset: [
+          'default',
+          {
+            discardComments: {
+              removeAll: true
+            }
+          }
+        ]
+      }
+    ]
+  ]
 }

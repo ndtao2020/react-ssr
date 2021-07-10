@@ -1,1 +1,1 @@
-export { default as PictureEndpoint } from "./PictureEndpoint"
+export { default as PictureEndpoint } from './PictureEndpoint'

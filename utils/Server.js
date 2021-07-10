@@ -2,9 +2,7 @@
  * Parse Host
  */
 export function parseHost(req) {
-  return `${req.protocol}://${req.subomains ? `${req.subomains.join(".")}.` : ""}${
-    req.hostname
-  }`
+  return `${req.protocol}://${req.subomains ? `${req.subomains.join('.')}.` : ''}${req.hostname}`
 }
 /**
  * Normalize a port into a number, string, or false.
@@ -23,14 +21,14 @@ export function normalizePort(val) {
  * Event listener for HTTP server "error" event.
  */
 export function onError(error, port) {
-  if (error.syscall !== "listen") throw error
+  if (error.syscall !== 'listen') throw error
   switch (error.code) {
-    case "EACCES":
+    case 'EACCES':
       // eslint-disable-next-line no-console
       console.error(`Pipe ${port} requires elevated privileges`)
       process.exit(1)
       break
-    case "EADDRINUSE":
+    case 'EADDRINUSE':
       // eslint-disable-next-line no-console
       console.error(`Port ${port} is already in use `)
       process.exit(1)

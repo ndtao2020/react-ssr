@@ -117,49 +117,49 @@
 
 //[data-background-color="dark"]
 
-.main-header[data-background-color="dark"] {
+.main-header[data-background-color='dark'] {
   @include main-header-state-style($default-color);
   @include navbar-header-state-style($default-color);
 }
 
 //[data-background-color="blue"]
 
-.main-header[data-background-color="blue"] {
+.main-header[data-background-color='blue'] {
   @include main-header-state-style($primary-color);
   @include navbar-header-state-style($primary-color);
 }
 
 //[data-background-color="purple"]
 
-.main-header[data-background-color="purple"] {
+.main-header[data-background-color='purple'] {
   @include main-header-state-style($secondary-color);
   @include navbar-header-state-style($secondary-color);
 }
 
 //[data-background-color="purple"]
 
-.main-header[data-background-color="light-blue"] {
+.main-header[data-background-color='light-blue'] {
   @include main-header-state-style($info-color);
   @include navbar-header-state-style($info-color);
 }
 
 //[data-background-color="orange"]
 
-.main-header[data-background-color="orange"] {
+.main-header[data-background-color='orange'] {
   @include main-header-state-style($warning-color);
   @include navbar-header-state-style($warning-color);
 }
 
 //[data-background-color="green"]
 
-.main-header[data-background-color="green"] {
+.main-header[data-background-color='green'] {
   @include main-header-state-style($success-color);
   @include navbar-header-state-style($success-color);
 }
 
 //[data-background-color="red"]
 
-.main-header[data-background-color="red"] {
+.main-header[data-background-color='red'] {
   @include main-header-state-style($danger-color);
   @include navbar-header-state-style($danger-color);
 }

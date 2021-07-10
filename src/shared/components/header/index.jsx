@@ -1,11 +1,11 @@
-import React from "react"
-import PropTypes from "prop-types"
-import "./style.scss"
+import React from 'react'
+import PropTypes from 'prop-types'
+import './style.scss'
 
 // Childs
-import Bar from "./Bar"
-import HeadMain from "./HeadMain"
-import Navigation from "./Navigation"
+import Bar from './Bar'
+import HeadMain from './HeadMain'
+import Navigation from './Navigation'
 
 export default function Header({ isLogin }) {
   return (
@@ -18,5 +18,5 @@ export default function Header({ isLogin }) {
 }
 
 Header.propTypes = {
-  isLogin: PropTypes.bool.isRequired,
+  isLogin: PropTypes.bool.isRequired
 }

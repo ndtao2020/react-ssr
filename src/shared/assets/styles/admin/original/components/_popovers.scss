@@ -32,22 +32,22 @@
   }
 }
 
-.popover.bs-popover-auto[x-placement^="right"],
+.popover.bs-popover-auto[x-placement^='right'],
 .popover.bs-popover-right {
   margin-left: 10px;
 }
 
-.popover.bs-popover-auto[x-placement^="left"],
+.popover.bs-popover-auto[x-placement^='left'],
 .popover.bs-popover-left {
   margin-right: 10px;
 }
 
-.popover.bs-popover-auto[x-placement^="top"],
+.popover.bs-popover-auto[x-placement^='top'],
 .popover.bs-popover-top {
   margin-bottom: 10px;
 }
 
-.popover.bs-popover-auto[x-placement^="bottom"],
+.popover.bs-popover-auto[x-placement^='bottom'],
 .popover.bs-popover-bottom {
   margin-top: 10px;
 }

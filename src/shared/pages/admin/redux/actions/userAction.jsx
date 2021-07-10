@@ -1,15 +1,15 @@
-import constant from "../constant"
+import constant from '../constant'
 
 export default {
   setUser: (obj) => {
     return {
       type: constant.USER.setUser,
-      payload: obj,
+      payload: obj
     }
   },
   logOut: () => {
     return {
-      type: constant.USER.logOut,
+      type: constant.USER.logOut
     }
-  },
+  }
 }

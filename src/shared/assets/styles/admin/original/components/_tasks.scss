@@ -16,7 +16,7 @@
         .custom-control {
           position: unset !important;
         }
-        input[type="checkbox"]:checked ~ .custom-control-label {
+        input[type='checkbox']:checked ~ .custom-control-label {
           text-decoration: line-through;
           color: #999;
         }

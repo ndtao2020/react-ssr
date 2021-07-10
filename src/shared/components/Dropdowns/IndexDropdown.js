@@ -1,5 +1,5 @@
-import React from "react"
-import { createPopper } from "@popperjs/core"
+import React from 'react'
+import { createPopper } from '@popperjs/core'
 
 const IndexDropdown = () => {
   // dropdown props
@@ -8,7 +8,7 @@ const IndexDropdown = () => {
   const popoverDropdownRef = React.createRef()
   const openDropdownPopover = () => {
     createPopper(btnDropdownRef.current, popoverDropdownRef.current, {
-      placement: "bottom-start",
+      placement: 'bottom-start'
     })
     setDropdownPopoverShow(true)
   }
@@ -31,79 +31,36 @@ const IndexDropdown = () => {
       <div
         ref={popoverDropdownRef}
         className={
-          (dropdownPopoverShow ? "block " : "hidden ") +
-          "bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48"
+          (dropdownPopoverShow ? 'block ' : 'hidden ') + 'bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48'
         }
       >
-        <span
-          className={
-            "text-sm pt-2 pb-0 px-4 font-bold block w-full whitespace-nowrap bg-transparent text-blueGray-400"
-          }
-        >
-          Admin Layout
-        </span>
-        <a
-          href="/admin/dashboard"
-          className="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-        >
+        <span className={'text-sm pt-2 pb-0 px-4 font-bold block w-full whitespace-nowrap bg-transparent text-blueGray-400'}>Admin Layout</span>
+        <a href="/admin/dashboard" className="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">
           Dashboard
         </a>
-        <a
-          href="/admin/settings"
-          className="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-        >
+        <a href="/admin/settings" className="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">
           Settings
         </a>
-        <a
-          href="/admin/tables"
-          className="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-        >
+        <a href="/admin/tables" className="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">
           Tables
         </a>
-        <a
-          href="/admin/maps"
-          className="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-        >
+        <a href="/admin/maps" className="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">
           Maps
         </a>
         <div className="h-0 mx-4 my-2 border border-solid border-blueGray-100" />
-        <span
-          className={
-            "text-sm pt-2 pb-0 px-4 font-bold block w-full whitespace-nowrap bg-transparent text-blueGray-400"
-          }
-        >
-          Auth Layout
-        </span>
-        <a
-          href="/auth/login"
-          className="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-        >
+        <span className={'text-sm pt-2 pb-0 px-4 font-bold block w-full whitespace-nowrap bg-transparent text-blueGray-400'}>Auth Layout</span>
+        <a href="/auth/login" className="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">
           Login
         </a>
-        <a
-          href="/auth/register"
-          className="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-        >
+        <a href="/auth/register" className="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">
           Register
         </a>
         <div className="h-0 mx-4 my-2 border border-solid border-blueGray-100" />
-        <span
-          className={
-            "text-sm pt-2 pb-0 px-4 font-bold block w-full whitespace-nowrap bg-transparent text-blueGray-400"
-          }
-        >
-          No Layout
-        </span>
-        <a
-          href="/landing"
-          className="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-        >
+        <span className={'text-sm pt-2 pb-0 px-4 font-bold block w-full whitespace-nowrap bg-transparent text-blueGray-400'}>No Layout</span>
+        <a href="/landing" className="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">
           Landing
         </a>
-        <a
-          href="/profile"
-          className="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-        >
+        <a href="/profile" className="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">
           Profile
         </a>
       </div>

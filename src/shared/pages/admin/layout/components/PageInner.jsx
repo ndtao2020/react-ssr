@@ -1,13 +1,13 @@
-import React, { lazy } from "react"
-import { useSelector } from "react-redux"
-import { Route, Switch } from "react-router-dom"
-import Breadcrumbs from "./Breadcrumbs"
-import Nprogress from "../Nprogress"
-import RenderSuspense from "@/shared/components/RenderSuspense"
-import { menuSelector } from "../../redux/selector"
-import { checkLinkURL, getAllRoute } from "../../routes/permission"
+import React, { lazy } from 'react'
+import { useSelector } from 'react-redux'
+import { Route, Switch } from 'react-router-dom'
+import Breadcrumbs from './Breadcrumbs'
+import Nprogress from '../Nprogress'
+import RenderSuspense from '@/shared/components/RenderSuspense'
+import { menuSelector } from '../../redux/selector'
+import { checkLinkURL, getAllRoute } from '../../routes/permission'
 
-const Page404 = lazy(() => import("../../views/base/page404/Page404"))
+const Page404 = lazy(() => import('../../views/base/page404/Page404'))
 
 export default function PageInner() {
   const { menu } = useSelector(menuSelector)
@@ -23,11 +23,7 @@ export default function PageInner() {
               name={route.viewName}
               render={(props) => (
                 <Nprogress>
-                  <Breadcrumbs
-                    viewName={route.viewName}
-                    viewIcon={route.viewIcon}
-                    match={props.match}
-                  />
+                  <Breadcrumbs viewName={route.viewName} viewIcon={route.viewIcon} match={props.match} />
                   <route.component {...props} />
                 </Nprogress>
               )}

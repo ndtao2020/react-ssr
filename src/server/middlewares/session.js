@@ -5,8 +5,7 @@ export const isLogin = (req) => {
   return req.session.user !== undefined && req.session.user !== null
 }
 // middleware function to check for logged-in users
-export const sessionChecker = (req, res, next) =>
-  isLogin(req) ? next() : res.redirect("/login")
+export const sessionChecker = (req, res, next) => (isLogin(req) ? next() : res.redirect('/login'))
 // extract Token
 export const extractSession = (req) => {
   if (!isLogin(req)) {

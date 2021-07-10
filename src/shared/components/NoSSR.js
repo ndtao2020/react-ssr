@@ -1,5 +1,5 @@
-import React from "react"
-import { Spinners } from "./spinners"
+import React from 'react'
+import { Spinners } from './spinners'
 
 export default function NoSSR({ canRender, children, onSSR }) {
   return canRender ? children : onSSR
@@ -7,5 +7,5 @@ export default function NoSSR({ canRender, children, onSSR }) {
 
 NoSSR.defaultProps = {
   canRender: false,
-  onSSR: <Spinners />,
+  onSSR: <Spinners />
 }

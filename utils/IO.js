@@ -1,4 +1,4 @@
-import fs from "fs"
+import fs from 'fs'
 
 export const getFileExtension = (filename) => {
   // return filename.split('.').pop();
@@ -8,7 +8,7 @@ export const getFileExtension = (filename) => {
 export const deleteFolderRecursive = function (path) {
   if (fs.existsSync(path)) {
     fs.readdirSync(path).forEach(function (file) {
-      var curPath = path + "/" + file
+      var curPath = path + '/' + file
       if (fs.lstatSync(curPath).isDirectory()) {
         // recurse
         deleteFolderRecursive(curPath)

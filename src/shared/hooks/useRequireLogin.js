@@ -1,8 +1,8 @@
-import React, { useState, useMemo } from "react"
-import { Button } from "react-bootstrap"
-import configBuild from "@/configs/build"
-import Modal from "@/shared/components/modal"
-import "./styles.scss"
+import React, { useState, useMemo } from 'react'
+import { Button } from 'react-bootstrap'
+import configBuild from '@/configs/build'
+import Modal from '@/shared/components/modal'
+import './styles.scss'
 
 /**
  * Hiển thị modal yêu cầu đăng nhập
@@ -20,7 +20,7 @@ export default function useRequireLogin() {
         <div className="d-flex align-items-center mt-4">
           <div className="d-inline-flex m-auto align-items-center">
             <img src={`/${configBuild.folderAssets}/l.svg`} width={48} height={48} />
-            <h4 className="m-0" style={{ color: "#00918C" }}>
+            <h4 className="m-0" style={{ color: '#00918C' }}>
               Home Page
             </h4>
           </div>
@@ -29,17 +29,9 @@ export default function useRequireLogin() {
           <div className="w-75 m-auto d-flex">
             <div className="form-group w-100">
               <label htmlFor="username">Hãy đăng ký để tham gia Sàn đấu giá</label>
-              <input
-                placeholder="Tên tài khoản"
-                id="username"
-                className="form-control mb-2 m-height-3rem"
-              />
-              <Button
-                className="w-100 m-height-3rem"
-                onClick={() => (location.href = "/signup")}
-                style={{ backgroundColor: "#00918C" }}
-              >
-                {" "}
+              <input placeholder="Tên tài khoản" id="username" className="form-control mb-2 m-height-3rem" />
+              <Button className="w-100 m-height-3rem" onClick={() => (location.href = '/signup')} style={{ backgroundColor: '#00918C' }}>
+                {' '}
                 Đăng ký
               </Button>
               <div className="mt-1 d-flex align-items-center">
